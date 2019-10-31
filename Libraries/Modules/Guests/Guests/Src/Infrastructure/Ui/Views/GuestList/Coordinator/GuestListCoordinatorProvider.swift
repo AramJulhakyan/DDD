@@ -25,8 +25,6 @@ final class GuestListCoordinatorProvider: MUKRootViewCoordinator {
 
     lazy var findMyGuestsSubject: PublishSubject<Void> = { .init() }()
 
-    lazy var guestsList: [GuestDto] = { .init() }()
-
     lazy var childCoordinators: [MUKCoordinator] = { .init() }()
 
     var rootViewController: UIViewController? { return viewController }
@@ -74,9 +72,9 @@ extension GuestListCoordinatorProvider {
     }
 
     func bindAndReload(guests: [GuestDto]) {
-        guestsList.removeAll()
-        guestsList.append(contentsOf: guests)
-        viewController.guestsTableView.reloadData()
+        viewController.items.removeAll()
+        viewController.items.append(contentsOf: guests)
+        viewController.reloadData()
     }
 
     func presentAlertError(error: GuestsError) {
