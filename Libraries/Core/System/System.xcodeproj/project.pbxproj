@@ -1,0 +1,673 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8976EA60162E5BD6410D83FE /* Pods_core_System.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9866AE7DD294DD825A149068 /* Pods_core_System.framework */; };
+		E2860D2823633DD600D00B56 /* System.h in Headers */ = {isa = PBXBuildFile; fileRef = E2860D2623633DD600D00B56 /* System.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2A8625523648112004BE049 /* SKHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8622C23648112004BE049 /* SKHandler.swift */; };
+		E2A8625623648112004BE049 /* SKServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8622E23648112004BE049 /* SKServices.swift */; };
+		E2A8625723648112004BE049 /* SKCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8623023648112004BE049 /* SKCredentials.swift */; };
+		E2A8625823648112004BE049 /* SKCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8623123648112004BE049 /* SKCredentialsService.swift */; };
+		E2A8625923648112004BE049 /* SKLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8623223648112004BE049 /* SKLog.swift */; };
+		E2A8625A23648112004BE049 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8623323648112004BE049 /* System.swift */; };
+		E2A8625B23648112004BE049 /* SKUserDefaultsSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8623723648112004BE049 /* SKUserDefaultsSettingsRepository.swift */; };
+		E2A8625C23648112004BE049 /* SKKeychainCredentialsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8623923648112004BE049 /* SKKeychainCredentialsRepository.swift */; };
+		E2A8625D23648112004BE049 /* SKPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8623A23648112004BE049 /* SKPersistence.swift */; };
+		E2A8625E23648112004BE049 /* SKSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8623E23648112004BE049 /* SKSettingsRepository.swift */; };
+		E2A8625F23648112004BE049 /* SKRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8623F23648112004BE049 /* SKRepositoryError.swift */; };
+		E2A8626023648112004BE049 /* SKCredentialsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8624123648112004BE049 /* SKCredentialsEntity.swift */; };
+		E2A8626123648112004BE049 /* SKCredentialsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8624223648112004BE049 /* SKCredentialsRepository.swift */; };
+		E2A8626223648112004BE049 /* SKManageSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8624723648112004BE049 /* SKManageSettings.swift */; };
+		E2A8626323648112004BE049 /* SKManageSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8624823648112004BE049 /* SKManageSettingsService.swift */; };
+		E2A8626423648112004BE049 /* SKApplicationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8624923648112004BE049 /* SKApplicationServices.swift */; };
+		E2A8626523648112004BE049 /* SKSaveCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8624C23648112004BE049 /* SKSaveCredentialsService.swift */; };
+		E2A8626623648112004BE049 /* SKSaveCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8624D23648112004BE049 /* SKSaveCredentials.swift */; };
+		E2A8626723648112004BE049 /* SKFindCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8624F23648112004BE049 /* SKFindCredentialsService.swift */; };
+		E2A8626823648112004BE049 /* SKFindCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8625023648112004BE049 /* SKFindCredentials.swift */; };
+		E2A8626923648112004BE049 /* SKCredentialsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8625123648112004BE049 /* SKCredentialsError.swift */; };
+		E2A8626A23648112004BE049 /* SKDeleteCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8625323648112004BE049 /* SKDeleteCredentialsService.swift */; };
+		E2A8626B23648112004BE049 /* SKDeleteCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8625423648112004BE049 /* SKDeleteCredentials.swift */; };
+		E2A8626D236481D5004BE049 /* SKKeychainCredentialsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8626C236481D5004BE049 /* SKKeychainCredentialsEntity.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		197A7BF9E3348A9DC6328C4E /* Pods-core-System.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core-System.debug.xcconfig"; path = "Target Support Files/Pods-core-System/Pods-core-System.debug.xcconfig"; sourceTree = "<group>"; };
+		9866AE7DD294DD825A149068 /* Pods_core_System.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_core_System.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDACBEEE9AB4F86CEF4E1C27 /* Pods-core-System.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core-System.release.xcconfig"; path = "Target Support Files/Pods-core-System/Pods-core-System.release.xcconfig"; sourceTree = "<group>"; };
+		E2860D2323633DD600D00B56 /* System.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = System.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2860D2623633DD600D00B56 /* System.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System.h; sourceTree = "<group>"; };
+		E2860D2723633DD600D00B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2A8622C23648112004BE049 /* SKHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKHandler.swift; sourceTree = "<group>"; };
+		E2A8622E23648112004BE049 /* SKServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKServices.swift; sourceTree = "<group>"; };
+		E2A8623023648112004BE049 /* SKCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCredentials.swift; sourceTree = "<group>"; };
+		E2A8623123648112004BE049 /* SKCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCredentialsService.swift; sourceTree = "<group>"; };
+		E2A8623223648112004BE049 /* SKLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLog.swift; sourceTree = "<group>"; };
+		E2A8623323648112004BE049 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		E2A8623723648112004BE049 /* SKUserDefaultsSettingsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKUserDefaultsSettingsRepository.swift; sourceTree = "<group>"; };
+		E2A8623923648112004BE049 /* SKKeychainCredentialsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKKeychainCredentialsRepository.swift; sourceTree = "<group>"; };
+		E2A8623A23648112004BE049 /* SKPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPersistence.swift; sourceTree = "<group>"; };
+		E2A8623E23648112004BE049 /* SKSettingsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSettingsRepository.swift; sourceTree = "<group>"; };
+		E2A8623F23648112004BE049 /* SKRepositoryError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKRepositoryError.swift; sourceTree = "<group>"; };
+		E2A8624123648112004BE049 /* SKCredentialsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCredentialsEntity.swift; sourceTree = "<group>"; };
+		E2A8624223648112004BE049 /* SKCredentialsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCredentialsRepository.swift; sourceTree = "<group>"; };
+		E2A8624723648112004BE049 /* SKManageSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKManageSettings.swift; sourceTree = "<group>"; };
+		E2A8624823648112004BE049 /* SKManageSettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKManageSettingsService.swift; sourceTree = "<group>"; };
+		E2A8624923648112004BE049 /* SKApplicationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKApplicationServices.swift; sourceTree = "<group>"; };
+		E2A8624C23648112004BE049 /* SKSaveCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSaveCredentialsService.swift; sourceTree = "<group>"; };
+		E2A8624D23648112004BE049 /* SKSaveCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSaveCredentials.swift; sourceTree = "<group>"; };
+		E2A8624F23648112004BE049 /* SKFindCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKFindCredentialsService.swift; sourceTree = "<group>"; };
+		E2A8625023648112004BE049 /* SKFindCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKFindCredentials.swift; sourceTree = "<group>"; };
+		E2A8625123648112004BE049 /* SKCredentialsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCredentialsError.swift; sourceTree = "<group>"; };
+		E2A8625323648112004BE049 /* SKDeleteCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKDeleteCredentialsService.swift; sourceTree = "<group>"; };
+		E2A8625423648112004BE049 /* SKDeleteCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKDeleteCredentials.swift; sourceTree = "<group>"; };
+		E2A8626C236481D5004BE049 /* SKKeychainCredentialsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKKeychainCredentialsEntity.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2860D2023633DD600D00B56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8976EA60162E5BD6410D83FE /* Pods_core_System.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5FDB82E2BA074FBFA8EEC987 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9866AE7DD294DD825A149068 /* Pods_core_System.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CCD6A26674FAA8E048BF511 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				197A7BF9E3348A9DC6328C4E /* Pods-core-System.debug.xcconfig */,
+				BDACBEEE9AB4F86CEF4E1C27 /* Pods-core-System.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../../Pods;
+			sourceTree = "<group>";
+		};
+		E2860D1923633DD600D00B56 = {
+			isa = PBXGroup;
+			children = (
+				E2860D2523633DD600D00B56 /* System */,
+				E2860D2423633DD600D00B56 /* Products */,
+				8CCD6A26674FAA8E048BF511 /* Pods */,
+				5FDB82E2BA074FBFA8EEC987 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E2860D2423633DD600D00B56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2860D2323633DD600D00B56 /* System.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2860D2523633DD600D00B56 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				E2860D2E23633DDB00D00B56 /* Src */,
+				E2860D2623633DD600D00B56 /* System.h */,
+				E2860D2723633DD600D00B56 /* Info.plist */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		E2860D2E23633DDB00D00B56 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8624323648112004BE049 /* Application */,
+				E2A8623B23648112004BE049 /* Domain */,
+				E2A8622A23648112004BE049 /* Infrastructure */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		E2A8622A23648112004BE049 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8623423648112004BE049 /* Persistence */,
+				E2A8622B23648112004BE049 /* Ui */,
+				E2A8623223648112004BE049 /* SKLog.swift */,
+				E2A8623323648112004BE049 /* System.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		E2A8622B23648112004BE049 /* Ui */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8622D23648112004BE049 /* Services */,
+				E2A8622C23648112004BE049 /* SKHandler.swift */,
+			);
+			path = Ui;
+			sourceTree = "<group>";
+		};
+		E2A8622D23648112004BE049 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8622F23648112004BE049 /* Credentials */,
+				E2A8622E23648112004BE049 /* SKServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E2A8622F23648112004BE049 /* Credentials */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8623023648112004BE049 /* SKCredentials.swift */,
+				E2A8623123648112004BE049 /* SKCredentialsService.swift */,
+			);
+			path = Credentials;
+			sourceTree = "<group>";
+		};
+		E2A8623423648112004BE049 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8623523648112004BE049 /* Repositories */,
+				E2A8623A23648112004BE049 /* SKPersistence.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		E2A8623523648112004BE049 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8623623648112004BE049 /* Settings */,
+				E2A8623823648112004BE049 /* Credentials */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E2A8623623648112004BE049 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8623723648112004BE049 /* SKUserDefaultsSettingsRepository.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E2A8623823648112004BE049 /* Credentials */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8623923648112004BE049 /* SKKeychainCredentialsRepository.swift */,
+				E2A8626C236481D5004BE049 /* SKKeychainCredentialsEntity.swift */,
+			);
+			path = Credentials;
+			sourceTree = "<group>";
+		};
+		E2A8623B23648112004BE049 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8623C23648112004BE049 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E2A8623C23648112004BE049 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8624023648112004BE049 /* Credentials */,
+				E2A8623D23648112004BE049 /* Settings */,
+				E2A8623F23648112004BE049 /* SKRepositoryError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2A8623D23648112004BE049 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8623E23648112004BE049 /* SKSettingsRepository.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E2A8624023648112004BE049 /* Credentials */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8624123648112004BE049 /* SKCredentialsEntity.swift */,
+				E2A8624223648112004BE049 /* SKCredentialsRepository.swift */,
+			);
+			path = Credentials;
+			sourceTree = "<group>";
+		};
+		E2A8624323648112004BE049 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8624423648112004BE049 /* Services */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E2A8624423648112004BE049 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8624523648112004BE049 /* Settings */,
+				E2A8624923648112004BE049 /* SKApplicationServices.swift */,
+				E2A8624A23648112004BE049 /* Credentials */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E2A8624523648112004BE049 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8624623648112004BE049 /* ManageSettings */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E2A8624623648112004BE049 /* ManageSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8624723648112004BE049 /* SKManageSettings.swift */,
+				E2A8624823648112004BE049 /* SKManageSettingsService.swift */,
+			);
+			path = ManageSettings;
+			sourceTree = "<group>";
+		};
+		E2A8624A23648112004BE049 /* Credentials */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8624B23648112004BE049 /* SaveCredentials */,
+				E2A8624E23648112004BE049 /* FindCredentials */,
+				E2A8625123648112004BE049 /* SKCredentialsError.swift */,
+				E2A8625223648112004BE049 /* DeleteCredentials */,
+			);
+			path = Credentials;
+			sourceTree = "<group>";
+		};
+		E2A8624B23648112004BE049 /* SaveCredentials */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8624C23648112004BE049 /* SKSaveCredentialsService.swift */,
+				E2A8624D23648112004BE049 /* SKSaveCredentials.swift */,
+			);
+			path = SaveCredentials;
+			sourceTree = "<group>";
+		};
+		E2A8624E23648112004BE049 /* FindCredentials */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8624F23648112004BE049 /* SKFindCredentialsService.swift */,
+				E2A8625023648112004BE049 /* SKFindCredentials.swift */,
+			);
+			path = FindCredentials;
+			sourceTree = "<group>";
+		};
+		E2A8625223648112004BE049 /* DeleteCredentials */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8625323648112004BE049 /* SKDeleteCredentialsService.swift */,
+				E2A8625423648112004BE049 /* SKDeleteCredentials.swift */,
+			);
+			path = DeleteCredentials;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E2860D1E23633DD600D00B56 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2860D2823633DD600D00B56 /* System.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E2860D2223633DD600D00B56 /* System */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2860D2B23633DD600D00B56 /* Build configuration list for PBXNativeTarget "System" */;
+			buildPhases = (
+				065266BCB50A38A353DDB2FD /* [CP] Check Pods Manifest.lock */,
+				E2860D1E23633DD600D00B56 /* Headers */,
+				E2860D1F23633DD600D00B56 /* Sources */,
+				E2860D2023633DD600D00B56 /* Frameworks */,
+				E2860D2123633DD600D00B56 /* Resources */,
+				E2860D3223633DF900D00B56 /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = System;
+			productName = System;
+			productReference = E2860D2323633DD600D00B56 /* System.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2860D1A23633DD600D00B56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SK;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Toni Vecina";
+				TargetAttributes = {
+					E2860D2223633DD600D00B56 = {
+						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
+					};
+				};
+			};
+			buildConfigurationList = E2860D1D23633DD600D00B56 /* Build configuration list for PBXProject "System" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2860D1923633DD600D00B56;
+			productRefGroup = E2860D2423633DD600D00B56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2860D2223633DD600D00B56 /* System */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2860D2123633DD600D00B56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		065266BCB50A38A353DDB2FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-core-System-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2860D3223633DF900D00B56 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2860D1F23633DD600D00B56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2A8625C23648112004BE049 /* SKKeychainCredentialsRepository.swift in Sources */,
+				E2A8626023648112004BE049 /* SKCredentialsEntity.swift in Sources */,
+				E2A8625F23648112004BE049 /* SKRepositoryError.swift in Sources */,
+				E2A8626D236481D5004BE049 /* SKKeychainCredentialsEntity.swift in Sources */,
+				E2A8625B23648112004BE049 /* SKUserDefaultsSettingsRepository.swift in Sources */,
+				E2A8626523648112004BE049 /* SKSaveCredentialsService.swift in Sources */,
+				E2A8625E23648112004BE049 /* SKSettingsRepository.swift in Sources */,
+				E2A8626923648112004BE049 /* SKCredentialsError.swift in Sources */,
+				E2A8626723648112004BE049 /* SKFindCredentialsService.swift in Sources */,
+				E2A8626823648112004BE049 /* SKFindCredentials.swift in Sources */,
+				E2A8625523648112004BE049 /* SKHandler.swift in Sources */,
+				E2A8625923648112004BE049 /* SKLog.swift in Sources */,
+				E2A8626223648112004BE049 /* SKManageSettings.swift in Sources */,
+				E2A8625723648112004BE049 /* SKCredentials.swift in Sources */,
+				E2A8626B23648112004BE049 /* SKDeleteCredentials.swift in Sources */,
+				E2A8625823648112004BE049 /* SKCredentialsService.swift in Sources */,
+				E2A8626623648112004BE049 /* SKSaveCredentials.swift in Sources */,
+				E2A8626123648112004BE049 /* SKCredentialsRepository.swift in Sources */,
+				E2A8626323648112004BE049 /* SKManageSettingsService.swift in Sources */,
+				E2A8626423648112004BE049 /* SKApplicationServices.swift in Sources */,
+				E2A8626A23648112004BE049 /* SKDeleteCredentialsService.swift in Sources */,
+				E2A8625623648112004BE049 /* SKServices.swift in Sources */,
+				E2A8625D23648112004BE049 /* SKPersistence.swift in Sources */,
+				E2A8625A23648112004BE049 /* System.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E2860D2923633DD600D00B56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E2860D2A23633DD600D00B56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E2860D2C23633DD600D00B56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 197A7BF9E3348A9DC6328C4E /* Pods-core-System.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = System/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.workshops.core.System;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E2860D2D23633DD600D00B56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDACBEEE9AB4F86CEF4E1C27 /* Pods-core-System.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = System/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.workshops.core.System;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2860D1D23633DD600D00B56 /* Build configuration list for PBXProject "System" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2860D2923633DD600D00B56 /* Debug */,
+				E2860D2A23633DD600D00B56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2860D2B23633DD600D00B56 /* Build configuration list for PBXNativeTarget "System" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2860D2C23633DD600D00B56 /* Debug */,
+				E2860D2D23633DD600D00B56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2860D1A23633DD600D00B56 /* Project object */;
+}
