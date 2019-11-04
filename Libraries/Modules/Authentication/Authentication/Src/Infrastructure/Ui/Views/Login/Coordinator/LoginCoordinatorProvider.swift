@@ -25,14 +25,20 @@ final class LoginCoordinatorProvider: LoginCoordinator {
 
     lazy var disposeBag: DisposeBag = { .init() }()
 
-    lazy var tokenSubject: PublishSubject<(email: String, password: String)> = { .init() }()
+    lazy var outputSubject = PublishSubject<Void>()
 
     lazy var childCoordinators: [MUKCoordinator] = { .init() }()
 
     var rootViewController: UIViewController? { return viewController }
 
     var output: Driver<(email: String, password: String)> {
-        return tokenSubject.asDriver(onErrorJustReturn: (email: "", password: ""))
+        let input = Observable.combineLatest(viewController.email, viewController.password)
+        return outputSubject
+            .withLatestFrom(input)
+            .flatMapLatest({ (email, password) -> Observable<(email: String, password: String)> in
+                return .just((email: email, password: password))
+            })
+            .asDriver(onErrorJustReturn: (email: "", password: ""))
     }
 
     // MARK: - Dependencies
@@ -64,9 +70,9 @@ extension LoginCoordinatorProvider {
 
     func bind(viewModel: LoginViewModel?) {
         let input = LoginViewModelProvider.Input(
-            email: viewController.emailTextField.rx.text.orEmpty.asObservable(),
-            password: viewController.passwordTextField.rx.text.orEmpty.asObservable(),
-            submit: viewController.submitButton.rx.tap.asObservable()
+            email: viewController.email,
+            password: viewController.password,
+            submit: viewController.submitDidPressed
         )
 
         let output = viewModel?.transform(input: input)
@@ -78,8 +84,8 @@ extension LoginCoordinatorProvider {
     func bind(result: Result<String, AuthError>) {
         logger?.info(classType: type(of: self), line: #line, message: String(describing: result))
         switch result {
-        case .success(let token): output(with: token)
-        case .failure(let error): presentAlertError(error: error)
+        case .success:              outputSubject.onNext(())
+        case .failure(let error):   presentAlertError(error: error)
         }
     }
 
@@ -91,7 +97,7 @@ extension LoginCoordinatorProvider {
         default:                message = "Invalid credentials"
         }
 
-        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "Ok", style: .default)
 
         let alertController = UIAlertController(
             title: "Error",
@@ -101,14 +107,7 @@ extension LoginCoordinatorProvider {
 
         alertController.addAction(alertAction)
 
-        viewController.present(alertController, animated: true, completion: nil)
-    }
-
-    func output(with token: String) {
-        tokenSubject.onNext((
-            email: viewController.emailTextField.text ?? "",
-            password: viewController.passwordTextField.text ?? ""
-        ))
+        viewController.present(alertController, animated: true)
     }
 
 }

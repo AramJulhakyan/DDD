@@ -10,15 +10,15 @@ import XCTest
 
 @testable import Authentication
 
-class AuthenticationViewsTests: XCTestCase {/* empty */}
+class AuthenticationCoordinatorsTests: XCTestCase {/* empty */}
 
 // MARK: - Tests
 
-extension AuthenticationViewsTests {
+extension AuthenticationCoordinatorsTests {
 
     func testAuthenticationViews() {
         self.measure {
-            XCTAssertNotNil(AuthenticationViews.loginVC)
+            XCTAssertNotNil(AuthenticationCoordinators.loginCoordinator)
         }
     }
 

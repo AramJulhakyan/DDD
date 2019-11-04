@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E427322F31580F6A5B96715 /* Pods_modules_Guests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3A1874E51339B6B0D277E /* Pods_modules_Guests.framework */; };
+		B2A849680E7F1DADF58B314E /* Pods_modules_Guests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D5935CEC275B304AF412E2 /* Pods_modules_Guests.framework */; };
 		E2509F7E236ACF8600F423B8 /* GuestListCoordinatorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2509F7D236ACF8600F423B8 /* GuestListCoordinatorProvider.swift */; };
 		E2833C882363254900533B38 /* Guests.h in Headers */ = {isa = PBXBuildFile; fileRef = E2833C862363254900533B38 /* Guests.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2833C912363255700533B38 /* Guests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2833C902363255700533B38 /* Guests.swift */; };
@@ -51,9 +51,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		38B3A1874E51339B6B0D277E /* Pods_modules_Guests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_modules_Guests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54E0BC53F1655B5B3190F9C7 /* Pods-modules-Guests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modules-Guests.debug.xcconfig"; path = "Target Support Files/Pods-modules-Guests/Pods-modules-Guests.debug.xcconfig"; sourceTree = "<group>"; };
-		AA52D802DA73DD53A05F686F /* Pods-modules-Guests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modules-Guests.release.xcconfig"; path = "Target Support Files/Pods-modules-Guests/Pods-modules-Guests.release.xcconfig"; sourceTree = "<group>"; };
+		07C29745DE4514EF0BFB6FD7 /* Pods-modules-Guests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modules-Guests.release.xcconfig"; path = "Target Support Files/Pods-modules-Guests/Pods-modules-Guests.release.xcconfig"; sourceTree = "<group>"; };
+		17D5935CEC275B304AF412E2 /* Pods_modules_Guests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_modules_Guests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB8F3AF9E3548ECC43588222 /* Pods-modules-Guests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modules-Guests.debug.xcconfig"; path = "Target Support Files/Pods-modules-Guests/Pods-modules-Guests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2509F7D236ACF8600F423B8 /* GuestListCoordinatorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestListCoordinatorProvider.swift; sourceTree = "<group>"; };
 		E2833C832363254900533B38 /* Guests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Guests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2833C862363254900533B38 /* Guests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Guests.h; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 			files = (
 				E2A8621B236475F8004BE049 /* MyUIKit.framework in Frameworks */,
 				E2A861E02364405B004BE049 /* MyFoundation.framework in Frameworks */,
-				9E427322F31580F6A5B96715 /* Pods_modules_Guests.framework in Frameworks */,
+				B2A849680E7F1DADF58B314E /* Pods_modules_Guests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,16 +100,16 @@
 			children = (
 				E2A8621A236475F8004BE049 /* MyUIKit.framework */,
 				E2A861DF2364405B004BE049 /* MyFoundation.framework */,
-				38B3A1874E51339B6B0D277E /* Pods_modules_Guests.framework */,
+				17D5935CEC275B304AF412E2 /* Pods_modules_Guests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E1760CEDFF46FF8048A2C576 /* Pods */ = {
+		2D21D61A6BF4B737C074C58B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				54E0BC53F1655B5B3190F9C7 /* Pods-modules-Guests.debug.xcconfig */,
-				AA52D802DA73DD53A05F686F /* Pods-modules-Guests.release.xcconfig */,
+				CB8F3AF9E3548ECC43588222 /* Pods-modules-Guests.debug.xcconfig */,
+				07C29745DE4514EF0BFB6FD7 /* Pods-modules-Guests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../../../Pods;
@@ -121,7 +121,7 @@
 				E2833C852363254900533B38 /* Guests */,
 				E2833C842363254900533B38 /* Products */,
 				1DBF3EED9767294D0044FE99 /* Frameworks */,
-				E1760CEDFF46FF8048A2C576 /* Pods */,
+				2D21D61A6BF4B737C074C58B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -324,7 +324,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2833C8B2363254900533B38 /* Build configuration list for PBXNativeTarget "Guests" */;
 			buildPhases = (
-				91C14CCA9C242D86AFF56322 /* [CP] Check Pods Manifest.lock */,
+				0AB24F0B74372B5CE042C1B6 /* [CP] Check Pods Manifest.lock */,
 				E2833C7E2363254900533B38 /* Headers */,
 				E2833C7F2363254900533B38 /* Sources */,
 				E2833C802363254900533B38 /* Frameworks */,
@@ -385,7 +385,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		91C14CCA9C242D86AFF56322 /* [CP] Check Pods Manifest.lock */ = {
+		0AB24F0B74372B5CE042C1B6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -580,7 +580,7 @@
 		};
 		E2833C8C2363254900533B38 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54E0BC53F1655B5B3190F9C7 /* Pods-modules-Guests.debug.xcconfig */;
+			baseConfigurationReference = CB8F3AF9E3548ECC43588222 /* Pods-modules-Guests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -608,7 +608,7 @@
 		};
 		E2833C8D2363254900533B38 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA52D802DA73DD53A05F686F /* Pods-modules-Guests.release.xcconfig */;
+			baseConfigurationReference = 07C29745DE4514EF0BFB6FD7 /* Pods-modules-Guests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -111,6 +111,7 @@ end
 
 abstract_target 'tests-modules' do
   rxTests
+  kingfisher
   
   target 'AuthenticationTests' do
     project $modules + '/Authentication/Authentication' + $extension
@@ -118,6 +119,5 @@ abstract_target 'tests-modules' do
   
   target 'FeedTests' do
     project $modules + '/Feed/Feed' + $extension
-    kingfisher
   end
 end
