@@ -24,6 +24,10 @@ extension FeedApplicationServices {
         return FindAllItemsServiceProvider(logger: get(), repository: get())
     }
 
+    var findItem: FindItemService {
+        return FindItemServiceProvider(logger: get(), repository: get())
+    }
+
 }
 
 private struct Assembler: MFLog, PersistanceRepositories {/* empty */}

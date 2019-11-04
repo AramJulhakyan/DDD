@@ -33,4 +33,12 @@ extension HttpFeedRepository: FeedRepository {
         ]))
     }
 
+    // Mocked response
+
+    func find(itemId: String) -> Observable<Result<FeedItemEntity, DomainError>> {
+        return .just(.success(
+            HttpFeedItemEntity(name: "", imageUrl: "https://picsum.photos/id/1055/200/200", updatedAt: "")
+        ))
+    }
+
 }

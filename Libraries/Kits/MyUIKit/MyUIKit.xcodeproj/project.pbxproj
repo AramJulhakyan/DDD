@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		708722787600E27FFE0533D6 /* Pods_kits_MyUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277F5F0449568C42B9B493E2 /* Pods_kits_MyUIKit.framework */; };
+		7CCB3B38814A25CC999546B5 /* Pods_kits_MyUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C87E856DB0FEA4ACD66998 /* Pods_kits_MyUIKit.framework */; };
 		E2593A1123634F430008911F /* MyUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E2593A0F23634F430008911F /* MyUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2593A1D23634FFC0008911F /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2593A1C23634FFC0008911F /* UICollectionView.swift */; };
 		E2593A20236350230008911F /* MUKReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2593A1F236350230008911F /* MUKReusableView.swift */; };
@@ -20,9 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		277F5F0449568C42B9B493E2 /* Pods_kits_MyUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kits_MyUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		39AA5F636642CB552E030DFD /* Pods-kits-MyUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kits-MyUIKit.debug.xcconfig"; path = "Target Support Files/Pods-kits-MyUIKit/Pods-kits-MyUIKit.debug.xcconfig"; sourceTree = "<group>"; };
-		79EB533B4BAD4F6631AAA8CB /* Pods-kits-MyUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kits-MyUIKit.release.xcconfig"; path = "Target Support Files/Pods-kits-MyUIKit/Pods-kits-MyUIKit.release.xcconfig"; sourceTree = "<group>"; };
+		31C87E856DB0FEA4ACD66998 /* Pods_kits_MyUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kits_MyUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5915FC621F94C831DEA2D2AA /* Pods-kits-MyUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kits-MyUIKit.debug.xcconfig"; path = "Target Support Files/Pods-kits-MyUIKit/Pods-kits-MyUIKit.debug.xcconfig"; sourceTree = "<group>"; };
 		E2593A0C23634F430008911F /* MyUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2593A0F23634F430008911F /* MyUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyUIKit.h; sourceTree = "<group>"; };
 		E2593A1023634F430008911F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		E2A8621823647466004BE049 /* MUKGuestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUKGuestTableViewCell.swift; sourceTree = "<group>"; };
 		E2D09CEA2369CE6300E70623 /* MUKCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUKCoordinator.swift; sourceTree = "<group>"; };
 		E2D09CF02369D47100E70623 /* MUKRootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUKRootViewCoordinator.swift; sourceTree = "<group>"; };
+		F0147EF74AFE02D60269F896 /* Pods-kits-MyUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kits-MyUIKit.release.xcconfig"; path = "Target Support Files/Pods-kits-MyUIKit/Pods-kits-MyUIKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,27 +41,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				708722787600E27FFE0533D6 /* Pods_kits_MyUIKit.framework in Frameworks */,
+				7CCB3B38814A25CC999546B5 /* Pods_kits_MyUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		261EA8A9D58EE44242677C93 /* Pods */ = {
+		360A1582DB39090BB84107C1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				39AA5F636642CB552E030DFD /* Pods-kits-MyUIKit.debug.xcconfig */,
-				79EB533B4BAD4F6631AAA8CB /* Pods-kits-MyUIKit.release.xcconfig */,
+				5915FC621F94C831DEA2D2AA /* Pods-kits-MyUIKit.debug.xcconfig */,
+				F0147EF74AFE02D60269F896 /* Pods-kits-MyUIKit.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../../../Pods;
 			sourceTree = "<group>";
 		};
-		D7CBF2E33252CC3C754949BA /* Frameworks */ = {
+		D59D5D8A2EA0CCB95384B85E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				277F5F0449568C42B9B493E2 /* Pods_kits_MyUIKit.framework */,
+				31C87E856DB0FEA4ACD66998 /* Pods_kits_MyUIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -71,8 +71,8 @@
 			children = (
 				E2593A0E23634F430008911F /* MyUIKit */,
 				E2593A0D23634F430008911F /* Products */,
-				261EA8A9D58EE44242677C93 /* Pods */,
-				D7CBF2E33252CC3C754949BA /* Frameworks */,
+				360A1582DB39090BB84107C1 /* Pods */,
+				D59D5D8A2EA0CCB95384B85E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,7 +183,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2593A1423634F430008911F /* Build configuration list for PBXNativeTarget "MyUIKit" */;
 			buildPhases = (
-				370E62AA94BA9060405BD23B /* [CP] Check Pods Manifest.lock */,
+				AE2E04C407E8A3A8282A17A8 /* [CP] Check Pods Manifest.lock */,
 				E2593A0723634F430008911F /* Headers */,
 				E2593A0823634F430008911F /* Sources */,
 				E2593A0923634F430008911F /* Frameworks */,
@@ -244,7 +244,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		370E62AA94BA9060405BD23B /* [CP] Check Pods Manifest.lock */ = {
+		AE2E04C407E8A3A8282A17A8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -427,7 +427,7 @@
 		};
 		E2593A1523634F430008911F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39AA5F636642CB552E030DFD /* Pods-kits-MyUIKit.debug.xcconfig */;
+			baseConfigurationReference = 5915FC621F94C831DEA2D2AA /* Pods-kits-MyUIKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -455,7 +455,7 @@
 		};
 		E2593A1623634F430008911F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79EB533B4BAD4F6631AAA8CB /* Pods-kits-MyUIKit.release.xcconfig */;
+			baseConfigurationReference = F0147EF74AFE02D60269F896 /* Pods-kits-MyUIKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

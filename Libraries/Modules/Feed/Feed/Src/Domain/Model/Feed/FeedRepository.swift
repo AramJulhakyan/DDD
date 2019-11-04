@@ -12,4 +12,6 @@ protocol FeedRepository {
 
     func findAll() -> Observable<Result<[FeedItemEntity], DomainError>>
 
+    func find(itemId: String) -> Observable<Result<FeedItemEntity, DomainError>>
+
 }
