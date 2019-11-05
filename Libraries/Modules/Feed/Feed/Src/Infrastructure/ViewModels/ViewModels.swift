@@ -14,6 +14,8 @@ private extension ViewModels {
 
     func get() -> FindAllItemsService { return Assembler().findAllItems }
 
+    func get() -> FindItemService { return Assembler().findItem }
+
     func get() -> MFLog { return Assembler() }
 
 }
@@ -21,6 +23,8 @@ private extension ViewModels {
 extension ViewModels {
 
     var feedVM: FeedViewModel { return FeedViewModelProvider(logger: get(), findAllItemsService: get()) }
+
+    var findItemVM: FindItemViewModel { return FindItemViewModelProvider(logger: get(), findItemService: get()) }
 
 }
 

@@ -62,9 +62,17 @@ extension FeedCoordinatorProvider {
     func bind(viewModel: FeedViewModel?) {
         let input = FeedViewModelProvider.Input(execute: findItemsSubject)
         let output = viewModel?.transform(input: input)
-        output?.result.drive(onNext: { [unowned self] (result) in
-            self.bind(result: result)
-        }).disposed(by: disposeBag)
+        output?.result
+            .drive(onNext: { [unowned self] result in
+                self.bind(result: result)
+            })
+            .disposed(by: disposeBag)
+
+        viewController.itemSelected
+            .drive(onNext: { [weak self] itemId in
+                self?.presentDetailView(for: itemId)
+            })
+            .disposed(by: disposeBag)
     }
 
     func bind(result: Result<[FeedItemDto], FeedError>) {
@@ -101,6 +109,26 @@ extension FeedCoordinatorProvider {
         alertController.addAction(retryAction)
 
         viewController.present(alertController, animated: true, completion: nil)
+    }
+
+}
+
+extension FeedCoordinatorProvider {
+
+    private func presentDetailView(for itemId: String) {
+        let findItemCoordinator = FeedCoordinators.findItemCoordinator
+        guard let rootViewController = findItemCoordinator.rootViewController else { return }
+        findItemCoordinator.itemId = itemId
+        findItemCoordinator.start()
+        addChildCoordinator(findItemCoordinator)
+
+        findItemCoordinator.didDismiss
+            .drive(onNext: { [weak self, unowned findItemCoordinator] in
+                self?.removeChildCoordinator(findItemCoordinator)
+            })
+            .disposed(by: disposeBag)
+
+        viewController.navigationController?.pushViewController(rootViewController, animated: true)
     }
 
 }

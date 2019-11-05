@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93588C8A6507BF9E8F069E99 /* Pods_core_System.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A4CB467AFEBEF35A5F25DD /* Pods_core_System.framework */; };
+		72FE1FCC867EE88374A45E46 /* Pods_core_System.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89854C6413B48B1E7B8564F0 /* Pods_core_System.framework */; };
 		E2860D2823633DD600D00B56 /* System.h in Headers */ = {isa = PBXBuildFile; fileRef = E2860D2623633DD600D00B56 /* System.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2A8625523648112004BE049 /* SKHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8622C23648112004BE049 /* SKHandler.swift */; };
 		E2A8625623648112004BE049 /* SKServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8622E23648112004BE049 /* SKServices.swift */; };
@@ -36,9 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FFB4E8CAA97D636F5477F84 /* Pods-core-System.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core-System.debug.xcconfig"; path = "Target Support Files/Pods-core-System/Pods-core-System.debug.xcconfig"; sourceTree = "<group>"; };
-		1EC114994A67751B9C577BA9 /* Pods-core-System.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core-System.release.xcconfig"; path = "Target Support Files/Pods-core-System/Pods-core-System.release.xcconfig"; sourceTree = "<group>"; };
-		B0A4CB467AFEBEF35A5F25DD /* Pods_core_System.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_core_System.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84314E0B0D7354EFF11CBC29 /* Pods-core-System.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core-System.debug.xcconfig"; path = "Target Support Files/Pods-core-System/Pods-core-System.debug.xcconfig"; sourceTree = "<group>"; };
+		89854C6413B48B1E7B8564F0 /* Pods_core_System.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_core_System.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94650676B58EDB33C4F80C30 /* Pods-core-System.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core-System.release.xcconfig"; path = "Target Support Files/Pods-core-System/Pods-core-System.release.xcconfig"; sourceTree = "<group>"; };
 		E2860D2323633DD600D00B56 /* System.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = System.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2860D2623633DD600D00B56 /* System.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System.h; sourceTree = "<group>"; };
 		E2860D2723633DD600D00B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,26 +73,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93588C8A6507BF9E8F069E99 /* Pods_core_System.framework in Frameworks */,
+				72FE1FCC867EE88374A45E46 /* Pods_core_System.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0543369E0FE21D857707E4AD /* Frameworks */ = {
+		4D33B787E6E77695D86AA2D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B0A4CB467AFEBEF35A5F25DD /* Pods_core_System.framework */,
+				89854C6413B48B1E7B8564F0 /* Pods_core_System.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D6667829F249213C66C55493 /* Pods */ = {
+		4D3B26C2AAA1DD378E3972CB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0FFB4E8CAA97D636F5477F84 /* Pods-core-System.debug.xcconfig */,
-				1EC114994A67751B9C577BA9 /* Pods-core-System.release.xcconfig */,
+				84314E0B0D7354EFF11CBC29 /* Pods-core-System.debug.xcconfig */,
+				94650676B58EDB33C4F80C30 /* Pods-core-System.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../../../Pods;
@@ -103,8 +103,8 @@
 			children = (
 				E2860D2523633DD600D00B56 /* System */,
 				E2860D2423633DD600D00B56 /* Products */,
-				D6667829F249213C66C55493 /* Pods */,
-				0543369E0FE21D857707E4AD /* Frameworks */,
+				4D3B26C2AAA1DD378E3972CB /* Pods */,
+				4D33B787E6E77695D86AA2D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,7 +335,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2860D2B23633DD600D00B56 /* Build configuration list for PBXNativeTarget "System" */;
 			buildPhases = (
-				78EB3317418E79283B76C445 /* [CP] Check Pods Manifest.lock */,
+				25BFDE2B1E4C987F7880E92B /* [CP] Check Pods Manifest.lock */,
 				E2860D1E23633DD600D00B56 /* Headers */,
 				E2860D1F23633DD600D00B56 /* Sources */,
 				E2860D2023633DD600D00B56 /* Frameworks */,
@@ -396,7 +396,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		78EB3317418E79283B76C445 /* [CP] Check Pods Manifest.lock */ = {
+		25BFDE2B1E4C987F7880E92B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -595,7 +595,7 @@
 		};
 		E2860D2C23633DD600D00B56 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FFB4E8CAA97D636F5477F84 /* Pods-core-System.debug.xcconfig */;
+			baseConfigurationReference = 84314E0B0D7354EFF11CBC29 /* Pods-core-System.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -622,7 +622,7 @@
 		};
 		E2860D2D23633DD600D00B56 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EC114994A67751B9C577BA9 /* Pods-core-System.release.xcconfig */;
+			baseConfigurationReference = 94650676B58EDB33C4F80C30 /* Pods-core-System.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

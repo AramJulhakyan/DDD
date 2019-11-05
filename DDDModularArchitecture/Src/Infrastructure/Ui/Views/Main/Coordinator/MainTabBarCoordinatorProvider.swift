@@ -73,12 +73,15 @@ extension MainTabBarCoordinatorProvider {
         let feedCoordinator = FeedCoordinators.feedCoordinator
         guard let rootViewController = feedCoordinator.rootViewController else { return nil }
 
-        rootViewController.tabBarItem = .init(title: "Feed", image: nil, tag: 0)
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+
+        navigationController.tabBarItem = .init(title: "Feed", image: nil, tag: 0)
+        rootViewController.title = "Feed"
 
         feedCoordinator.start()
         addChildCoordinator(feedCoordinator)
 
-        return rootViewController
+        return navigationController
     }
 
     var guestListVC: UIViewController? {

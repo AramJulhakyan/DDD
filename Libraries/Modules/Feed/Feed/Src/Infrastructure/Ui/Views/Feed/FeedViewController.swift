@@ -8,10 +8,12 @@
 
 import MyFoundation
 import MyUIKit
+import RxCocoa
+import RxSwift
 import SnapKit
 import UIKit
 
-class FeedViewController: UIViewController {
+final class FeedViewController: UIViewController {
 
     // MARK: - Interface
 
@@ -41,6 +43,11 @@ class FeedViewController: UIViewController {
     // MARK: - Properties
 
     lazy var items: [FeedItemDto] = { .init() }()
+
+    private lazy var itemSubject = PublishSubject<String>()
+    var itemSelected: Driver<String> {
+        return itemSubject.asDriver(onErrorJustReturn: "")
+    }
 
     // MARK: - Lifecycle
 
@@ -93,9 +100,20 @@ extension FeedViewController: UICollectionViewDataSource {
     ) -> UICollectionViewCell {
         let item = items[indexPath.item]
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MUKImageCollectionViewCell
-        cell.imageView.load(url: item.imageUrl)
+        cell.imageView.load(string: item.imageUrl)
 
         return cell
+    }
+
+}
+
+// MARK: - UICollectionView delegate
+
+extension FeedViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = items[indexPath.item]
+        itemSubject.onNext(item.itemId)
     }
 
 }
@@ -109,5 +127,13 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize { return .init(width: 80, height: 80) }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
+    }
 
 }

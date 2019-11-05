@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50D8DC4E412B6EC05818C187 /* Pods_kits_MyUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754D88D7D5AD867AF8EC4A81 /* Pods_kits_MyUIKit.framework */; };
+		010435FEFC8C806A4E0A7B27 /* Pods_kits_MyUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648FFCDC6072EFE7EEDEC5DB /* Pods_kits_MyUIKit.framework */; };
 		E2593A1123634F430008911F /* MyUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E2593A0F23634F430008911F /* MyUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2593A1D23634FFC0008911F /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2593A1C23634FFC0008911F /* UICollectionView.swift */; };
 		E2593A20236350230008911F /* MUKReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2593A1F236350230008911F /* MUKReusableView.swift */; };
@@ -20,9 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		372DE28B900E80E1444EF5B1 /* Pods-kits-MyUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kits-MyUIKit.release.xcconfig"; path = "Target Support Files/Pods-kits-MyUIKit/Pods-kits-MyUIKit.release.xcconfig"; sourceTree = "<group>"; };
-		4BEDC64BCAB500E99767F71E /* Pods-kits-MyUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kits-MyUIKit.debug.xcconfig"; path = "Target Support Files/Pods-kits-MyUIKit/Pods-kits-MyUIKit.debug.xcconfig"; sourceTree = "<group>"; };
-		754D88D7D5AD867AF8EC4A81 /* Pods_kits_MyUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kits_MyUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5414475B4BFDF72C0C049D77 /* Pods-kits-MyUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kits-MyUIKit.release.xcconfig"; path = "Target Support Files/Pods-kits-MyUIKit/Pods-kits-MyUIKit.release.xcconfig"; sourceTree = "<group>"; };
+		648FFCDC6072EFE7EEDEC5DB /* Pods_kits_MyUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kits_MyUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F2FBF8CCAE1A89967514374 /* Pods-kits-MyUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kits-MyUIKit.debug.xcconfig"; path = "Target Support Files/Pods-kits-MyUIKit/Pods-kits-MyUIKit.debug.xcconfig"; sourceTree = "<group>"; };
 		E2593A0C23634F430008911F /* MyUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2593A0F23634F430008911F /* MyUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyUIKit.h; sourceTree = "<group>"; };
 		E2593A1023634F430008911F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,29 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50D8DC4E412B6EC05818C187 /* Pods_kits_MyUIKit.framework in Frameworks */,
+				010435FEFC8C806A4E0A7B27 /* Pods_kits_MyUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05DAD6E1494D28A9934EF742 /* Pods */ = {
+		427B0E363952EFC29DCAFFA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4BEDC64BCAB500E99767F71E /* Pods-kits-MyUIKit.debug.xcconfig */,
-				372DE28B900E80E1444EF5B1 /* Pods-kits-MyUIKit.release.xcconfig */,
+				648FFCDC6072EFE7EEDEC5DB /* Pods_kits_MyUIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B4B1BB0A97EA199AC347CE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F2FBF8CCAE1A89967514374 /* Pods-kits-MyUIKit.debug.xcconfig */,
+				5414475B4BFDF72C0C049D77 /* Pods-kits-MyUIKit.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../../../Pods;
-			sourceTree = "<group>";
-		};
-		DBF14460246B37613D7E6473 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				754D88D7D5AD867AF8EC4A81 /* Pods_kits_MyUIKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E2593A0223634F430008911F = {
@@ -71,8 +71,8 @@
 			children = (
 				E2593A0E23634F430008911F /* MyUIKit */,
 				E2593A0D23634F430008911F /* Products */,
-				05DAD6E1494D28A9934EF742 /* Pods */,
-				DBF14460246B37613D7E6473 /* Frameworks */,
+				9B4B1BB0A97EA199AC347CE3 /* Pods */,
+				427B0E363952EFC29DCAFFA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,7 +183,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2593A1423634F430008911F /* Build configuration list for PBXNativeTarget "MyUIKit" */;
 			buildPhases = (
-				98938DD7B0E22A054622335A /* [CP] Check Pods Manifest.lock */,
+				E7DF90FF9B7239530076CD1D /* [CP] Check Pods Manifest.lock */,
 				E2593A0723634F430008911F /* Headers */,
 				E2593A0823634F430008911F /* Sources */,
 				E2593A0923634F430008911F /* Frameworks */,
@@ -244,7 +244,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		98938DD7B0E22A054622335A /* [CP] Check Pods Manifest.lock */ = {
+		E2593A1723634FCD0008911F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		E7DF90FF9B7239530076CD1D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -265,24 +283,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		E2593A1723634FCD0008911F /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -427,7 +427,7 @@
 		};
 		E2593A1523634F430008911F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BEDC64BCAB500E99767F71E /* Pods-kits-MyUIKit.debug.xcconfig */;
+			baseConfigurationReference = 8F2FBF8CCAE1A89967514374 /* Pods-kits-MyUIKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -455,7 +455,7 @@
 		};
 		E2593A1623634F430008911F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 372DE28B900E80E1444EF5B1 /* Pods-kits-MyUIKit.release.xcconfig */;
+			baseConfigurationReference = 5414475B4BFDF72C0C049D77 /* Pods-kits-MyUIKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

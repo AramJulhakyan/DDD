@@ -10,6 +10,8 @@ import Foundation
 
 protocol FeedItemEntity {
 
+    var itemId: String { get }
+
     var name: String { get }
 
     var imageUrl: String { get }

@@ -12,6 +12,8 @@ import Foundation
 
 struct FeedItemEntityMock: FeedItemEntity {
 
+    var itemId: String = "test"
+
     var name: String = "test"
 
     var imageUrl: String = "test"

@@ -11,9 +11,12 @@ import UIKit
 
 public extension UIImageView {
 
-    func load(url: String) {
-        guard let url = URL(string: url) else { return }
+    func load(string: String) {
+        guard let url = URL(string: string) else { return }
+        load(url: url)
+    }
 
+    func load(url: URL) {
         let processor = RoundCornerImageProcessor(cornerRadius: 20)
         kf.indicatorType = .activity
         kf.setImage(
