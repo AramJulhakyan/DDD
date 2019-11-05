@@ -26,7 +26,7 @@ extension FindItemServiceProvider: FindItemService {
         return repository.find(itemId: itemId).flatMapLatest { result -> Observable<Result<FeedItemDto, FeedError>> in
             switch result {
             case .success(let value):
-                let data = FeedItemDto(imageUrl: value.imageUrl)
+                let data = FeedItemDto(itemId: itemId, imageUrl: value.imageUrl)
                 return .just(.success(data))
             case .failure(let error):
                 switch error {

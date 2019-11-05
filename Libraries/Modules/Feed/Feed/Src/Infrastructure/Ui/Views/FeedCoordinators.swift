@@ -15,6 +15,10 @@ public enum FeedCoordinators {
         return FeedCoordinatorProvider(feedVM: get(), logger: get())
     }
 
+    static var findItemCoordinator: FindItemCoordinator {
+        return FindItemCoordinatorProvider(findItemVM: get(), logger: get())
+    }
+
 }
 
 private extension FeedCoordinators {
@@ -22,6 +26,8 @@ private extension FeedCoordinators {
     static func get() -> MFLog { return Assembler() }
 
     static func get() -> FeedViewModel { return Assembler().feedVM }
+
+    static func get() -> FindItemViewModel { return Assembler().findItemVM }
 
 }
 

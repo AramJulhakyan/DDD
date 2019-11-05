@@ -36,7 +36,7 @@ extension FindItemViewModelProvider: FindItemViewModel {
     func transform(input: Input) -> Output {
         let result = input
             .execute
-            .flatMapLatest { _ -> Observable<Result<FeedItemDto, FeedError>> in
+            .flatMapLatest { () -> Observable<Result<FeedItemDto, FeedError>> in
                 guard !input.itemId.isEmpty else { return .just(.failure(.notFound)) }
 
                 return self.findItemService.execute(itemId: input.itemId)

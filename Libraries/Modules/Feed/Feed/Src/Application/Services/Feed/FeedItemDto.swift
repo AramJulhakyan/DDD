@@ -10,6 +10,7 @@ import Foundation
 
 struct FeedItemDto {
 
+    var itemId: String
     var imageUrl: String
 
 }

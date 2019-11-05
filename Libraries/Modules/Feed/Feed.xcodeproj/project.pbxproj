@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		1D90619AB12EE1C8BDF06B31 /* Pods_modules_Feed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFDC2AAFF34C2984B303524 /* Pods_modules_Feed.framework */; };
 		327DA1FFBE4374C05E061D84 /* Pods_tests_modules_FeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEACCE82430950C0FFB40F5 /* Pods_tests_modules_FeedTests.framework */; };
+		492ED71B237185F500CBBF00 /* FindItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ED71A237185F500CBBF00 /* FindItemCoordinator.swift */; };
 		498FCEC8236B37B20045C5E2 /* FindItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FCEC7236B37B20045C5E2 /* FindItemService.swift */; };
 		498FCECA236B38320045C5E2 /* FindItemServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FCEC9236B38320045C5E2 /* FindItemServiceProvider.swift */; };
 		498FCECD236B430C0045C5E2 /* FindItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FCECC236B430C0045C5E2 /* FindItemViewModel.swift */; };
 		498FCECF236B431B0045C5E2 /* FindItemViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FCECE236B431B0045C5E2 /* FindItemViewModelProvider.swift */; };
+		49A2FB3C23707AD100430126 /* FindItemCoordinatorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A2FB3B23707AD100430126 /* FindItemCoordinatorProvider.swift */; };
+		49A2FB3F23707B9C00430126 /* FindItemViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A2FB3E23707B9C00430126 /* FindItemViewController .swift */; };
 		E20018F52369FA0A002E03CB /* FeedCoordinatorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20018F42369FA0A002E03CB /* FeedCoordinatorProvider.swift */; };
 		E25939FE23634D000008911F /* FeedCoordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25939FD23634D000008911F /* FeedCoordinators.swift */; };
 		E2593A22236350900008911F /* MyUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2593A21236350900008911F /* MyUIKit.framework */; };
@@ -84,10 +87,13 @@
 /* Begin PBXFileReference section */
 		367B3E59999F13BBEF254031 /* Pods-modules-Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modules-Feed.release.xcconfig"; path = "Target Support Files/Pods-modules-Feed/Pods-modules-Feed.release.xcconfig"; sourceTree = "<group>"; };
 		3A3D7F27A4519DEB5660F069 /* Pods-tests-modules-FeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests-modules-FeedTests.debug.xcconfig"; path = "Target Support Files/Pods-tests-modules-FeedTests/Pods-tests-modules-FeedTests.debug.xcconfig"; sourceTree = "<group>"; };
+		492ED71A237185F500CBBF00 /* FindItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindItemCoordinator.swift; sourceTree = "<group>"; };
 		498FCEC7236B37B20045C5E2 /* FindItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindItemService.swift; sourceTree = "<group>"; };
 		498FCEC9236B38320045C5E2 /* FindItemServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindItemServiceProvider.swift; sourceTree = "<group>"; };
 		498FCECC236B430C0045C5E2 /* FindItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindItemViewModel.swift; sourceTree = "<group>"; };
 		498FCECE236B431B0045C5E2 /* FindItemViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindItemViewModelProvider.swift; sourceTree = "<group>"; };
+		49A2FB3B23707AD100430126 /* FindItemCoordinatorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindItemCoordinatorProvider.swift; sourceTree = "<group>"; };
+		49A2FB3E23707B9C00430126 /* FindItemViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FindItemViewController .swift"; sourceTree = "<group>"; };
 		4EFDC2AAFF34C2984B303524 /* Pods_modules_Feed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_modules_Feed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BF25E208059BB6E428AB33 /* Pods-modules-Feed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modules-Feed.debug.xcconfig"; path = "Target Support Files/Pods-modules-Feed/Pods-modules-Feed.debug.xcconfig"; sourceTree = "<group>"; };
 		69D9975D0FB2667313F6732F /* Pods-tests-modules-FeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests-modules-FeedTests.release.xcconfig"; path = "Target Support Files/Pods-tests-modules-FeedTests/Pods-tests-modules-FeedTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +206,24 @@
 			path = FindItem;
 			sourceTree = "<group>";
 		};
+		49A2FB3A2370707500430126 /* FindItem */ = {
+			isa = PBXGroup;
+			children = (
+				49A2FB3D23707AEC00430126 /* Coordinator */,
+				49A2FB3E23707B9C00430126 /* FindItemViewController .swift */,
+			);
+			path = FindItem;
+			sourceTree = "<group>";
+		};
+		49A2FB3D23707AEC00430126 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				492ED71A237185F500CBBF00 /* FindItemCoordinator.swift */,
+				49A2FB3B23707AD100430126 /* FindItemCoordinatorProvider.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		E2833C922363257C00533B38 = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +286,7 @@
 		E2860D462363411700D00B56 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49A2FB3A2370707500430126 /* FindItem */,
 				E2860D472363411900D00B56 /* Feed */,
 				E25939FD23634D000008911F /* FeedCoordinators.swift */,
 			);
@@ -800,6 +825,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2F022EB236346D8002C0A54 /* FindAllItemsService.swift in Sources */,
+				49A2FB3F23707B9C00430126 /* FindItemViewController .swift in Sources */,
 				498FCECF236B431B0045C5E2 /* FindItemViewModelProvider.swift in Sources */,
 				E2860D6F2363466C00D00B56 /* FeedError.swift in Sources */,
 				498FCEC8236B37B20045C5E2 /* FindItemService.swift in Sources */,
@@ -810,10 +836,12 @@
 				E25939FE23634D000008911F /* FeedCoordinators.swift in Sources */,
 				E2860D5E2363445A00D00B56 /* HttpFeedRepository.swift in Sources */,
 				E2860D65236345B400D00B56 /* Persistance.swift in Sources */,
+				49A2FB3C23707AD100430126 /* FindItemCoordinatorProvider.swift in Sources */,
 				E2860D602363446800D00B56 /* HttpFeedItemEntity.swift in Sources */,
 				E2F022F723634937002C0A54 /* FeedViewModel.swift in Sources */,
 				E2860D502363417600D00B56 /* FeedViewController.swift in Sources */,
 				E2833CAA2363258A00533B38 /* Feed.swift in Sources */,
+				492ED71B237185F500CBBF00 /* FindItemCoordinator.swift in Sources */,
 				E2F022F42363490F002C0A54 /* ViewModels.swift in Sources */,
 				E2860D59236343C500D00B56 /* DomainError.swift in Sources */,
 				E2860D552363434800D00B56 /* FeedRepository.swift in Sources */,

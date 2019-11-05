@@ -10,6 +10,8 @@ import Foundation
 
 struct HttpFeedItemEntity: FeedItemEntity {
 
+    var itemId: String
+
     var name: String
 
     var imageUrl: String

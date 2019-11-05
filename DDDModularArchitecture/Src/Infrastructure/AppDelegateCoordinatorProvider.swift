@@ -41,20 +41,20 @@ final class AppDelegateCoordinatorProvider: MUKCoordinator {
     }
 
     func start() {
-//        let credentials = credentialsService?.find()
-//        switch credentials {
-//        case .success((let email, let password)):
-//            autoLogin(email: email, password: password)
-//
-//        case .failure:
-//            removeCredentials()
-//            showLogin()
-//
-//        default:
-//            break
-//        }
+        let credentials = credentialsService?.find()
+        switch credentials {
+        case .success((let email, let password)):
+            autoLogin(email: email, password: password)
 
-        showLogin()
+        case .failure:
+            removeCredentials()
+            showLogin()
+
+        default:
+            break
+        }
+
+//        showLogin()
     }
 
 }
