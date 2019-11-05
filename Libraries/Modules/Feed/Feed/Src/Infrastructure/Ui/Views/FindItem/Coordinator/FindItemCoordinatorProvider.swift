@@ -73,7 +73,7 @@ extension FindItemCoordinatorProvider {
     }
 
     func bind(viewModel: FindItemViewModel?) {
-        let itemId = self.itemId ?? "1"
+        let itemId = self.itemId ?? ""
         let input = FindItemViewModelProvider.Input(itemId: itemId, execute: findItemSubject)
         let output = viewModel?.transform(input: input)
         output?.result
@@ -85,16 +85,11 @@ extension FindItemCoordinatorProvider {
 
     func bind(result: Result<FeedItemDto, FeedError>) {
         switch result {
-        case .success(let value):
-            bindAndReload(item: value)
+        case .success(let item):
+            viewController.imageUrl = URL(string: item.imageUrl)
         case .failure(let error):
             presentAlertError(error: error)
         }
-    }
-
-    func bindAndReload(item: FeedItemDto) {
-        guard let imageURL = URL(string: item.imageUrl) else { return }
-        viewController.imageURLSubject.onNext(imageURL)
     }
 
     func presentAlertError(error: FeedError) {
