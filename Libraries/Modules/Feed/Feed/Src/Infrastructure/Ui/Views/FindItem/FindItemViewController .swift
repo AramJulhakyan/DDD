@@ -15,7 +15,7 @@ import UIKit
 
 final class FindItemViewController: UIViewController {
 
-    lazy var itemImageView: UIImageView = {
+    private lazy var itemImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
 
@@ -28,9 +28,12 @@ final class FindItemViewController: UIViewController {
 
     // MARK: - Properties
 
-    lazy var disposeBag: DisposeBag = { .init() }()
-
-    lazy var imageURLSubject: ReplaySubject<URL> = { .create(bufferSize: 1) }()
+    var imageUrl: URL? {
+        didSet {
+            guard let value = imageUrl else { return }
+            itemImageView.load(url: value)
+        }
+    }
 
     private lazy var dismissSubject = PublishSubject<Void>()
     var didDismiss: Driver<Void> {
@@ -44,7 +47,6 @@ final class FindItemViewController: UIViewController {
 
         prepareInterface()
         prepareLayouts()
-        bind()
     }
 
     deinit {
@@ -71,15 +73,6 @@ extension FindItemViewController {
             }
         }
     }
-
-    func bind() {
-        imageURLSubject
-            .subscribe(onNext: { [weak self] url in
-                self?.itemImageView.load(url: url)
-            })
-            .disposed(by: disposeBag)
-    }
-
 }
 
 extension FindItemViewController {
