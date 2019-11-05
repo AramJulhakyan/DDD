@@ -76,7 +76,7 @@ extension MainTabBarCoordinatorProvider {
         let navigationController = UINavigationController(rootViewController: rootViewController)
 
         navigationController.tabBarItem = .init(title: "Feed", image: nil, tag: 0)
-        navigationController.navigationBar.topItem?.title = "Feed"
+        rootViewController.title = "Feed"
 
         feedCoordinator.start()
         addChildCoordinator(feedCoordinator)
