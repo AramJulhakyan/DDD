@@ -36,7 +36,9 @@ extension FindAllItemsServiceProvider: FindAllItemsService {
                     }
 
                 case .success(let items):
-                    let data = items.map { item -> FeedItemDto in FeedItemDto(itemId: item.itemId, imageUrl: item.imageUrl) }
+                    let data = items.map { item -> FeedItemDto in
+                        FeedItemDto(itemId: item.itemId, imageUrl: item.imageUrl)
+                    }
                     return .just(.success(data))
                 }
         }

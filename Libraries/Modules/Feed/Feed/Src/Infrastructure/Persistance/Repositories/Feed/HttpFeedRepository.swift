@@ -38,8 +38,9 @@ extension HttpFeedRepository: FeedRepository {
     // Mocked response
 
     func find(itemId: String) -> Observable<Result<FeedItemEntity, DomainError>> {
-        let item = items.filter ({ $0.itemId == itemId }).first ?? HttpFeedItemEntity(itemId: "1", name: "", imageUrl: "https://picsum.photos/id/1055/200/200", updatedAt: "")
+        guard let item = items.filter ({ $0.itemId == itemId }).first else {
+            return .just(.failure(.notFound(message: "Item with id \(itemId) not found")))
+        }
         return .just(.success(item))
     }
-
 }

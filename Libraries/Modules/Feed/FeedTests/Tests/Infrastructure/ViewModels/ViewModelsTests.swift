@@ -23,6 +23,7 @@ extension ViewModelsTests {
     func testViewModels() {
         let assembler = Assembler()
         self.measure {
+            XCTAssertNotNil(assembler.findItemVM)
             XCTAssertNotNil(assembler.feedVM)
         }
     }

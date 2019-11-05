@@ -13,7 +13,7 @@ import Foundation
 extension FeedItemDto {
 
     static var mock: FeedItemDto {
-        return self.init(imageUrl: "test")
+        return self.init(itemId: "test", imageUrl: "test")
     }
 
 }

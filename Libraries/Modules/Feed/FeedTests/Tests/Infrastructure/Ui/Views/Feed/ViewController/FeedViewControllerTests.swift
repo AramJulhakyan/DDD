@@ -13,7 +13,7 @@ import XCTest
 
 class FeedViewControllerTests: XCTestCase {
 
-    lazy var viewController: FeedViewController? = { FeedViews.feedVC as? FeedViewController }()
+    lazy var viewController: FeedViewController = { .init() }()
 
 }
 
@@ -26,8 +26,6 @@ extension FeedViewControllerTests {
     }
 
     func testViewDidLoad() {
-        guard let viewController = viewController else { XCTFail("ViewController not found") ; return }
-
         self.measure {
             viewController.viewDidLoad()
             XCTAssertTrue(viewController.view.subviews.contains(viewController.itemCollectionView))
@@ -36,27 +34,27 @@ extension FeedViewControllerTests {
     }
 
     func testUICollectionViewDataSource() {
-        viewController?.items.append(.mock)
-        viewController?.itemCollectionView.register(cell: MUKImageCollectionViewCell.self)
+        viewController.items.append(.mock)
+        viewController.itemCollectionView.register(cell: MUKImageCollectionViewCell.self)
 
-        let items = viewController?
+        let items = viewController
             .collectionView(
                 .init(frame: .zero, collectionViewLayout: .init()),
                 numberOfItemsInSection: 0
         )
 
-        XCTAssertEqual(viewController?.items.count, items ?? 0)
+        XCTAssertEqual(viewController.items.count, items)
     }
 
     func testUICollectionViewDelegate() {
-        let size = viewController?.collectionView(
+        let size = viewController.collectionView(
             .init(frame: .zero, collectionViewLayout: .init()),
             layout: .init(),
             sizeForItemAt: .init(row: 0, section: 0)
         )
 
-        XCTAssertEqual(size?.width, 80)
-        XCTAssertEqual(size?.height, 80)
+        XCTAssertEqual(size.width, 80)
+        XCTAssertEqual(size.height, 80)
     }
 
 }

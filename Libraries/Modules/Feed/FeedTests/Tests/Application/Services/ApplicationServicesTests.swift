@@ -21,8 +21,8 @@ class ApplicationServicesTests: XCTestCase {
 extension ApplicationServicesTests {
 
     func testApplicationServices() {
+        let assembler = Assembler()
         self.measure {
-            let assembler = Assembler()
             XCTAssertNotNil(assembler.feed)
         }
     }

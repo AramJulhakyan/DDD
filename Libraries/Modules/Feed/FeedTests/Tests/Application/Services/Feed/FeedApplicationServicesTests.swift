@@ -24,6 +24,7 @@ extension FeedApplicationServicesTests {
         let assembler = Assembler() as FeedApplicationServices
 
         self.measure {
+            XCTAssertNotNil(assembler.findItem)
             XCTAssertNotNil(assembler.findAllItems)
         }
     }

@@ -8,8 +8,6 @@
 
 import MyFoundation
 import MyUIKit
-import RxCocoa
-import RxSwift
 import SnapKit
 import UIKit
 
@@ -17,7 +15,7 @@ class GuestListViewController: UIViewController {
 
     // MARK: - Interface
 
-    lazy var guestsTableView: UITableView = {
+    private lazy var guestsTableView: UITableView = {
         let instance = UITableView()
         instance.register(cell: MUKGuestTableViewCell.self)
 
@@ -35,7 +33,7 @@ class GuestListViewController: UIViewController {
 
     // MARK: - Properties
 
-    lazy var guestsList: [GuestDto] = { .init() }()
+    lazy var items: [GuestDto] = { .init() }()
 
     // MARK: - Lifecycle
 
@@ -72,6 +70,10 @@ extension GuestListViewController {
         }
     }
 
+    func reloadData() {
+        guestsTableView.reloadData()
+    }
+
 }
 
 // MARK: - UITableView data source
@@ -79,11 +81,11 @@ extension GuestListViewController {
 extension GuestListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return guestsList.count
+        return items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = guestsList[indexPath.row]
+        let item = items[indexPath.row]
 
         let cell                = tableView.dequeueReusableCell(forIndexPath: indexPath) as MUKGuestTableViewCell
         cell.titleLabel.text    = item.name

@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:DDDModularArchitecture.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Libraries/Core/MyFoundation/MyFoundation.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Libraries/Core/System/System.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Libraries/Kits/MyUIKit/MyUIKit.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Libraries/Modules/Authentication/Authentication.xcodeproj">
    </FileRef>
    <FileRef
@@ -21,6 +9,18 @@
    </FileRef>
    <FileRef
       location = "group:Libraries/Modules/Guests/Guests.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Libraries/Core/MyFoundation/MyFoundation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Libraries/Kits/MyUIKit/MyUIKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Libraries/Core/System/System.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DDDModularArchitecture.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

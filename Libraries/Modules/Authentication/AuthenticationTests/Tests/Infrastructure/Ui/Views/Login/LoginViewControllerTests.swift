@@ -13,14 +13,7 @@ import RxSwift
 
 class LoginViewControllerTests: XCTestCase {
 
-    lazy var viewModel: LoginViewModelMock = { .init() }()
-
-    lazy var viewController: LoginViewController = {
-        let instance        = LoginViewController()
-        instance.loginVM    = viewModel
-
-        return instance
-    }()
+    lazy var viewController: LoginViewController = { .init() }()
 
     lazy var disposeBag: DisposeBag = { .init() }()
 
@@ -30,32 +23,14 @@ class LoginViewControllerTests: XCTestCase {
 
 extension LoginViewControllerTests {
 
-    func testTryingLoginOutput() {
-        let expectation = self.expectation(description: "default")
-
-        var emailExpec: String?
-        var passwordExpec: String?
-
-        viewModel.result = .success("test")
+    func testPrepareInterface() {
         viewController.viewDidLoad()
 
-        viewController.emailTextField.text = "email"
-        viewController.passwordTextField.text = "password"
+        let contentStackView = viewController.view.subviews.filter { view -> Bool in
+            return view is UIStackView
+        }
 
-        viewController.output.drive(onNext: { (arguments) in
-            let (email, password)   = arguments
-            emailExpec              = email
-            passwordExpec           = password
-            expectation.fulfill()
-        }).disposed(by: disposeBag)
-
-        viewController.output(with: "test")
-
-        wait(for: [expectation], timeout: 10)
-        XCTAssertNotNil(emailExpec)
-        XCTAssertEqual(emailExpec, viewController.emailTextField.text)
-        XCTAssertNotNil(passwordExpec)
-        XCTAssertEqual(passwordExpec, viewController.passwordTextField.text)
+        XCTAssertFalse(contentStackView.isEmpty)
     }
 
 }

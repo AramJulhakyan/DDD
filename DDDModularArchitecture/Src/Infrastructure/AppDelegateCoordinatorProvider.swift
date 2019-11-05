@@ -53,8 +53,6 @@ final class AppDelegateCoordinatorProvider: MUKCoordinator {
         default:
             break
         }
-
-//        showLogin()
     }
 
 }

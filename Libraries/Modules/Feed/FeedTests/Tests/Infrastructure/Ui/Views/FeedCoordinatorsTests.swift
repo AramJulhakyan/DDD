@@ -10,15 +10,15 @@ import XCTest
 
 @testable import Feed
 
-class FeedViewsTests: XCTestCase {/* empty */}
+class FeedCoordinatorsTests: XCTestCase {/* empty */}
 
 // MARK: - Tests
 
-extension FeedViewsTests {
+extension FeedCoordinatorsTests {
 
     func testFeedViews() {
         self.measure {
-            XCTAssertNotNil(FeedViews.feedVC)
+            XCTAssertNotNil(FeedCoordinators.feedCoordinator)
         }
     }
 

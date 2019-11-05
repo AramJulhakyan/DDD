@@ -7,14 +7,15 @@
 //
 
 import MyFoundation
+import RxSwift
 import SnapKit
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
     // MARK: - Interface
 
-    lazy var emailTextField: UITextField = {
+    private lazy var emailTextField: UITextField = {
         let instance                    = UITextField()
         instance.placeholder            = "your@email.com"
         instance.keyboardType           = .emailAddress
@@ -24,7 +25,7 @@ class LoginViewController: UIViewController {
         return instance
     }()
 
-    lazy var passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let instance = UITextField()
         instance.placeholder        = "password"
         instance.keyboardType       = .default
@@ -34,7 +35,7 @@ class LoginViewController: UIViewController {
         return instance
     }()
 
-    lazy var submitButton: UIButton = {
+    private lazy var submitButton: UIButton = {
         let instance = UIButton()
         instance.setTitle("Login", for: .normal)
         instance.backgroundColor = .darkText
@@ -42,7 +43,7 @@ class LoginViewController: UIViewController {
         return instance
     }()
 
-    lazy var formStackView: UIStackView = {
+    private lazy var formStackView: UIStackView = {
         let instance        = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, submitButton])
         instance.axis       = .vertical
         instance.alignment  = .fill
@@ -50,6 +51,14 @@ class LoginViewController: UIViewController {
 
         return instance
     }()
+
+    // MARK: - Properties
+
+    var email: Observable<String> { return emailTextField.rx.value.orEmpty.asObservable() }
+
+    var password: Observable<String> { return passwordTextField.rx.value.orEmpty.asObservable() }
+
+    var submitDidPressed: Observable<Void> { return submitButton.rx.tap.asObservable() }
 
     // MARK: - Dependencies
 
