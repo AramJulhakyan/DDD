@@ -41,6 +41,7 @@ private extension HttpGuestEntity {
 
     static func mock(category: String) -> GuestEntity {
         return HttpGuestEntity(
+            idGuest: "id\(Int.random(in: 1...10000))",
             name: "Guest \(Int.random(in: 1...100))",
             category: category,
             numberOfPhotos: Int.random(in: 1...1000),

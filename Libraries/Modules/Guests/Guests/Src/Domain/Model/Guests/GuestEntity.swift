@@ -10,6 +10,8 @@ import Foundation
 
 protocol GuestEntity {
 
+    var idGuest: String { get }
+
     var name: String { get }
 
     var category: String { get }

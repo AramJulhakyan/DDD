@@ -16,4 +16,6 @@ struct GuestDto {
 
     let numberOfPhotos: Int
 
+    let idGuest: String
+
 }

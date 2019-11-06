@@ -9,6 +9,7 @@
 import Foundation
 
 struct HttpGuestEntity: GuestEntity {
+    var idGuest: String
 
     var name: String
 

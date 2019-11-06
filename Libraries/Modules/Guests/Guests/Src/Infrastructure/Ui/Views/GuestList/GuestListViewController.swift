@@ -11,8 +11,14 @@ import MyUIKit
 import RxSwift
 import SnapKit
 import UIKit
+import RxCocoa
 
 class GuestListViewController: UIViewController {
+	
+	// MARK: - Output
+	var didSelectGuest: Driver<String?> {
+		return itemSelectedSubject.asDriver(onErrorJustReturn: nil)
+    }
 
     // MARK: - Interface
 
@@ -35,6 +41,8 @@ class GuestListViewController: UIViewController {
     private lazy var disposeBag: DisposeBag = { .init() }()
 
     private lazy var findMyGuestsSubject: PublishSubject<Void> = { .init() }()
+
+	private let itemSelectedSubject =  PublishSubject<String?>()
 
     // MARK: - Dependencies
 
@@ -161,5 +169,10 @@ extension GuestListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		itemSelectedSubject.onNext(items[indexPath.row].idGuest)
+		tableView.deselectRow(at: indexPath, animated: true)
+	}
 
 }

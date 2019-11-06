@@ -30,7 +30,8 @@ extension FindAllServiceProvider: FindAllService {
                         return GuestDto(
                             name: entity.name,
                             category: entity.category,
-                            numberOfPhotos: entity.numberOfPhotos
+                            numberOfPhotos: entity.numberOfPhotos,
+                            idGuest: entity.idGuest
                         )
                     }
                     return .just(.success(data))
