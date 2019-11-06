@@ -33,4 +33,22 @@ extension LoginViewControllerTests {
         XCTAssertFalse(contentStackView.isEmpty)
     }
 
+    func testBindResultSuccess() {
+        let expectation = self.expectation(description: "default")
+
+        var email: String?
+        var password: String?
+
+        viewController.output.drive(onNext: { result in
+            email = result.email
+            password = result.password
+            expectation.fulfill()
+        }).disposed(by: disposeBag)
+        viewController.bind(result: .success("test"))
+
+        wait(for: [expectation], timeout: 0.1)
+        XCTAssertNotNil(email)
+        XCTAssertNotNil(password)
+    }
+
 }
