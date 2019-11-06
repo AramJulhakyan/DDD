@@ -8,7 +8,7 @@
 
 import MyFoundation
 import MyUIKit
-import RxSwift
+import UIKit
 
 final class GuestListCoordinatorProvider: GuestListCoordinator {
 
@@ -35,7 +35,9 @@ final class GuestListCoordinatorProvider: GuestListCoordinator {
         logger?.info(classType: type(of: self), line: #line, message: "Coordinator released")
     }
 
-    func start() {/* empty */}
+    func start() {
+        bind()
+    }
 
 }
 
@@ -43,7 +45,7 @@ final class GuestListCoordinatorProvider: GuestListCoordinator {
 
 extension GuestListCoordinatorProvider {
 
-    func prepareInterface() {
+    func bind() {
         // ViewController outputs configurations here
     }
 
