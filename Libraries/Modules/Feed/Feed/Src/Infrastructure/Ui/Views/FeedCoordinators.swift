@@ -15,8 +15,8 @@ public enum FeedCoordinators {/* empty */}
 
 extension FeedCoordinators {
 
-    static var findItemCoordinator: FindItemCoordinator {
-        return FindItemCoordinatorProvider(findItemVM: get(), logger: get())
+    static func findItemCoordinator(itemId: String) -> FeedItemCoordinator {
+        FeedItemCoordinatorProvider(viewController: get(itemId: itemId), logger: get())
     }
 
 }
@@ -25,8 +25,8 @@ extension FeedCoordinators {
 
 public extension FeedCoordinators {
 
-    static var feedCoordinator: MUKRootViewCoordinator {
-        return FeedCoordinatorProvider(feedVM: get(), logger: get())
+    static var feedCoordinator: FeedCoordinator {
+        FeedCoordinatorProvider(viewController: get(), logger: get())
     }
 
 }
@@ -35,12 +35,12 @@ public extension FeedCoordinators {
 
 private extension FeedCoordinators {
 
-    static func get() -> MFLog { return Assembler() }
+    static func get() -> MFLog { Assembler() }
 
-    static func get() -> FeedViewModel { return Assembler().feedVM }
+    static func get() -> FeedViewController { Assembler().feedVC }
 
-    static func get() -> FindItemViewModel { return Assembler().findItemVM }
+    static func get(itemId: String) -> FeedItemViewController { Assembler().feedItemVC(itemId: itemId) }
 
 }
 
-private struct Assembler: MFLog, ViewModels {/* empty */}
+private struct Assembler: MFLog, FeedViews {/* empty */}

@@ -1,5 +1,5 @@
 //
-//  FindItemCoordinator.swift
+//  FeedItemCoordinator.swift
 //  Feed
 //
 //  Created by Miguel Angel on 05/11/2019.
@@ -9,9 +9,8 @@
 import MyUIKit
 import RxCocoa
 
-protocol FindItemCoordinator: MUKRootViewCoordinator {
+protocol FeedItemCoordinator: MUKRootViewCoordinator {
 
-    var itemId: String? { get set }
     var didDismiss: Driver<Void> { get }
 
 }

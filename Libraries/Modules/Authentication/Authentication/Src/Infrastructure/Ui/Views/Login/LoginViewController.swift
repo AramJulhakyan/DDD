@@ -7,6 +7,7 @@
 //
 
 import MyFoundation
+import RxCocoa
 import RxSwift
 import SnapKit
 import UIKit
@@ -54,15 +55,15 @@ final class LoginViewController: UIViewController {
 
     // MARK: - Properties
 
-    var email: Observable<String> { return emailTextField.rx.value.orEmpty.asObservable() }
+    private lazy var disposeBag: DisposeBag = { .init() }()
 
-    var password: Observable<String> { return passwordTextField.rx.value.orEmpty.asObservable() }
-
-    var submitDidPressed: Observable<Void> { return submitButton.rx.tap.asObservable() }
+    private lazy var outputSubject: PublishSubject<(email: String, password: String)> = { .init() }()
 
     // MARK: - Dependencies
 
     var logger: MFLog?
+
+    var loginVM: LoginViewModel?
 
     // MARK: - Lifecycle
 
@@ -71,6 +72,8 @@ final class LoginViewController: UIViewController {
 
         prepareInteface()
         prepareLayouts()
+
+        bind(viewModel: loginVM)
     }
 
     deinit {
@@ -83,6 +86,10 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController {
 
+    var output: Driver<(email: String, password: String)> {
+        outputSubject.asDriver(onErrorJustReturn: (email: "", password: ""))
+    }
+
     func prepareInteface() {
         view.backgroundColor = .white
         view.addSubview(formStackView)
@@ -94,6 +101,55 @@ extension LoginViewController {
             make.left.right.equalToSuperview().inset(inset)
             make.center.equalToSuperview()
         }
+    }
+
+    func bind(viewModel: LoginViewModel?) {
+        let input = LoginViewModelProvider.Input(
+            email: emailTextField.rx.value.orEmpty.asObservable(),
+            password: passwordTextField.rx.value.orEmpty.asObservable(),
+            submit: submitButton.rx.tap.asObservable()
+        )
+
+        let output = viewModel?.transform(input: input)
+        output?.result.drive(onNext: { [unowned self] result in
+            self.bind(result: result)
+        }).disposed(by: disposeBag)
+    }
+
+    func bind(result: Result<String, AuthError>) {
+        logger?.info(classType: type(of: self), line: #line, message: String(describing: result))
+        switch result {
+        case .success:              outputUserLogged()
+        case .failure(let error):   presentAlertError(error: error)
+        }
+    }
+
+    func outputUserLogged() {
+        outputSubject.onNext((
+            email: emailTextField.text ?? "",
+            password: passwordTextField.text ?? ""
+        ))
+    }
+
+    func presentAlertError(error: AuthError) {
+        let message: String
+        switch error {
+        case .invalidEmail:     message = "Invalid email"
+        case .invalidPassword:  message = "Invalid password"
+        default:                message = "Invalid credentials"
+        }
+
+        let alertAction = UIAlertAction(title: "Ok", style: .default)
+
+        let alertController = UIAlertController(
+            title: "Error",
+            message: message,
+            preferredStyle: .alert
+        )
+
+        alertController.addAction(alertAction)
+
+        present(alertController, animated: true)
     }
 
 }

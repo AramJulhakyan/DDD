@@ -19,6 +19,7 @@ extension FeedCoordinatorsTests {
     func testFeedViews() {
         self.measure {
             XCTAssertNotNil(FeedCoordinators.feedCoordinator)
+            XCTAssertNotNil(FeedCoordinators.findItemCoordinator(itemId: "test"))
         }
     }
 
