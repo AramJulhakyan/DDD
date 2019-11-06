@@ -40,14 +40,17 @@ final class FeedViewController: UIViewController {
 
     var logger: MFLog?
 
+    var viewModel: FeedViewModel?
+
     // MARK: - Properties
 
-    lazy var items: [FeedItemDto] = { .init() }()
+    private lazy var disposeBag: DisposeBag = { .init() }()
 
-    private lazy var itemSubject = PublishSubject<String>()
-    var itemSelected: Driver<String> {
-        return itemSubject.asDriver(onErrorJustReturn: "")
-    }
+    private lazy var findItemsSubject: PublishSubject<Void> = { .init() }()
+
+    private lazy var itemSubject: PublishSubject<String> = { .init() }()
+
+    private lazy var items: [FeedItemDto] = { .init() }()
 
     // MARK: - Lifecycle
 
@@ -56,6 +59,9 @@ final class FeedViewController: UIViewController {
 
         prepareInterface()
         prepareLayouts()
+
+        bind(viewModel: viewModel)
+        getFeed()
     }
 
     deinit {
@@ -67,6 +73,8 @@ final class FeedViewController: UIViewController {
 // MARK: - Additional properties
 
 extension FeedViewController {
+
+    var itemDidSelect: Driver<String> { itemSubject.asDriver(onErrorJustReturn: "") }
 
     func prepareInterface() {
         view.backgroundColor = .white
@@ -82,6 +90,51 @@ extension FeedViewController {
                 make.edges.equalToSuperview().inset(inset)
             }
         }
+    }
+
+    func bind(viewModel: FeedViewModel?) {
+        let input = FeedViewModelProvider.Input(execute: findItemsSubject)
+        let output = viewModel?.transform(input: input)
+
+        output?.result.drive(onNext: { [unowned self] result in
+            self.bind(result: result)
+        }).disposed(by: disposeBag)
+    }
+
+    func bind(result: Result<[FeedItemDto], FeedError>) {
+        switch result {
+        case .success(let value): bindAndReload(items: value)
+        case .failure(let error): presentAlertError(error: error)
+        }
+    }
+
+    func bindAndReload(items: [FeedItemDto]) {
+        self.items.removeAll()
+        self.items.append(contentsOf: items)
+        itemCollectionView.reloadData()
+    }
+
+    func getFeed() {
+        findItemsSubject.onNext(())
+    }
+
+    func presentAlertError(error: FeedError) {
+        let retryAction = UIAlertAction(
+            title: "Retry",
+            style: .default
+        ) { [unowned self] _ in self.getFeed() }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+
+        let alertController = UIAlertController(
+            title: "Attention!",
+            message: "An error ocurred",
+            preferredStyle: .alert
+        )
+        alertController.addAction(cancelAction)
+        alertController.addAction(retryAction)
+
+        present(alertController, animated: true, completion: nil)
     }
 
 }
@@ -126,14 +179,24 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
-    ) -> CGSize { return .init(width: 80, height: 80) }
+    ) -> CGSize { .collectionViewItemSize }
 
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int
-    ) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
-    }
+    ) -> UIEdgeInsets { .collectionViewInset }
+
+}
+
+private extension CGSize {
+
+    static var collectionViewItemSize: CGSize { .init(width: 80, height: 80) }
+
+}
+
+private extension UIEdgeInsets {
+
+    static var collectionViewInset: UIEdgeInsets { .init(top: 16, left: .zero, bottom: 16, right: .zero) }
 
 }

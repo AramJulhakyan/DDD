@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		134A2E5F07E705492113BDBF /* Pods_modules_Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F32F0936B087FBDCA889192 /* Pods_modules_Authentication.framework */; };
 		61F9C68581D02194F1053BE6 /* Pods_tests_modules_AuthenticationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C73E0E29CF2D9B08D9C4212 /* Pods_tests_modules_AuthenticationTests.framework */; };
+		E236FD4A2372C2EE004032DE /* AuthenticationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236FD492372C2EE004032DE /* AuthenticationViews.swift */; };
 		E25FF7A823632FA800EDAA8B /* AuthApplicationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FF7A723632FA800EDAA8B /* AuthApplicationServices.swift */; };
 		E25FF7AE2363300300EDAA8B /* HttpAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FF7AD2363300300EDAA8B /* HttpAuthRepository.swift */; };
 		E25FF7B0236330ED00EDAA8B /* PersistanceRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FF7AF236330ED00EDAA8B /* PersistanceRepositories.swift */; };
@@ -86,6 +87,7 @@
 		4AA64956B8B509E51600C343 /* Pods-tests-modules-AuthenticationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests-modules-AuthenticationTests.release.xcconfig"; path = "Target Support Files/Pods-tests-modules-AuthenticationTests/Pods-tests-modules-AuthenticationTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C73E0E29CF2D9B08D9C4212 /* Pods_tests_modules_AuthenticationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tests_modules_AuthenticationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B73CF51C42FAF163FC2A2D /* Pods-modules-Authentication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modules-Authentication.release.xcconfig"; path = "Target Support Files/Pods-modules-Authentication/Pods-modules-Authentication.release.xcconfig"; sourceTree = "<group>"; };
+		E236FD492372C2EE004032DE /* AuthenticationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViews.swift; sourceTree = "<group>"; };
 		E25FF7A723632FA800EDAA8B /* AuthApplicationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApplicationServices.swift; sourceTree = "<group>"; };
 		E25FF7AD2363300300EDAA8B /* HttpAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpAuthRepository.swift; sourceTree = "<group>"; };
 		E25FF7AF236330ED00EDAA8B /* PersistanceRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceRepositories.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				E2833CB1236326B000533B38 /* Login */,
 				E25FF7BE23633A5600EDAA8B /* AuthenticationCoordinators.swift */,
+				E236FD492372C2EE004032DE /* AuthenticationViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				E2D879CA23632F0C0038F424 /* AuthError.swift in Sources */,
 				E25FF7BF23633A5600EDAA8B /* AuthenticationCoordinators.swift in Sources */,
 				E25FF7B52363320700EDAA8B /* LoginViewModel.swift in Sources */,
+				E236FD4A2372C2EE004032DE /* AuthenticationViews.swift in Sources */,
 				E2833C76236323EA00533B38 /* Authentication.swift in Sources */,
 				E2833CEE23632C6000533B38 /* LoginServiceProvider.swift in Sources */,
 				E2DDDC332369FEB50094C761 /* LoginCoordinator.swift in Sources */,

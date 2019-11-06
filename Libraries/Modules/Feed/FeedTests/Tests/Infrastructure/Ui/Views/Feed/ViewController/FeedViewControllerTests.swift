@@ -7,13 +7,23 @@
 //
 
 import XCTest
+import RxSwift
 
 @testable import MyUIKit
 @testable import Feed
 
 class FeedViewControllerTests: XCTestCase {
 
-    lazy var viewController: FeedViewController = { .init() }()
+    lazy var disposeBag: DisposeBag = { .init() }()
+
+    lazy var viewModel: FeedViewModelMock = { .init() }()
+
+    lazy var viewController: FeedViewController = {
+        let instance = FeedViewController()
+        instance.viewModel = viewModel
+
+        return instance
+    }()
 
 }
 
@@ -34,16 +44,16 @@ extension FeedViewControllerTests {
     }
 
     func testUICollectionViewDataSource() {
-        viewController.items.append(.mock)
-        viewController.itemCollectionView.register(cell: MUKImageCollectionViewCell.self)
+        let mock: [FeedItemDto] = [.mock]
+        viewController.bind(result: .success(mock))
 
-        let items = viewController
+        let numbOfItems = viewController
             .collectionView(
                 .init(frame: .zero, collectionViewLayout: .init()),
                 numberOfItemsInSection: 0
         )
 
-        XCTAssertEqual(viewController.items.count, items)
+        XCTAssertEqual(numbOfItems, mock.count)
     }
 
     func testUICollectionViewDelegate() {
@@ -55,6 +65,74 @@ extension FeedViewControllerTests {
 
         XCTAssertEqual(size.width, 80)
         XCTAssertEqual(size.height, 80)
+    }
+
+    func testFindItemsFromViewDidLoad() {
+        let mock: [FeedItemDto] = [.mock]
+        viewModel.observable = .just(.success(mock))
+
+        self.measure {
+            viewController.viewDidLoad()
+
+            let numbOfItems = viewController
+                .collectionView(
+                    .init(frame: .zero, collectionViewLayout: .init()),
+                    numberOfItemsInSection: 0
+            )
+
+            XCTAssertEqual(numbOfItems, mock.count)
+        }
+    }
+
+    func testItemDidSelect() {
+        let mock: [FeedItemDto] = [.mock]
+        viewController.bind(result: .success(mock))
+
+        let expectation = self.expectation(description: "default")
+        var itemId: String?
+
+        viewController.itemDidSelect.drive(onNext: { value in
+            itemId = value
+            expectation.fulfill()
+        }).disposed(by: disposeBag)
+
+        viewController.collectionView(
+            .init(frame: .zero, collectionViewLayout: .init()),
+            didSelectItemAt: .init(row: 0, section: 0)
+        )
+
+        wait(for: [expectation], timeout: 0.1)
+        XCTAssertNotNil(itemId)
+        XCTAssertEqual(itemId, mock.first?.itemId)
+    }
+
+    func testCollectionViewInsets() {
+        let mock: [FeedItemDto] = [.mock]
+        viewController.bind(result: .success(mock))
+
+        let inset = viewController.collectionView(
+            .init(frame: .zero, collectionViewLayout: .init()),
+            layout: .init(),
+            insetForSectionAt: 0
+        )
+
+        let expectedInset = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
+        XCTAssertEqual(inset, expectedInset)
+    }
+
+    func testCollectionViewCell() {
+        let mock: [FeedItemDto] = [.mock]
+        viewController.bind(result: .success(mock))
+
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+        collectionView.register(cell: MUKImageCollectionViewCell.self)
+
+        let cell = viewController.collectionView(
+            collectionView,
+            cellForItemAt: .init(item: 0, section: 0)
+        )
+
+        XCTAssertTrue(cell is MUKImageCollectionViewCell)
     }
 
 }

@@ -24,7 +24,9 @@ extension ViewModels {
 
     var feedVM: FeedViewModel { return FeedViewModelProvider(logger: get(), findAllItemsService: get()) }
 
-    var findItemVM: FindItemViewModel { return FindItemViewModelProvider(logger: get(), findItemService: get()) }
+    func findItemVM(with itemId: String) -> FindItemViewModel {
+        FindItemViewModelProvider(itemId: itemId, logger: get(), findItemService: get())
+    }
 
 }
 

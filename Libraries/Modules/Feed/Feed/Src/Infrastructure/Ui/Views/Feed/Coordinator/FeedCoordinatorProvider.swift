@@ -12,35 +12,26 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-final class FeedCoordinatorProvider: MUKRootViewCoordinator {
+final class FeedCoordinatorProvider: FeedCoordinator {
 
     // MARK: - Properties
 
-    lazy var viewController: FeedViewController = {
-        let instance    = FeedViewController()
-        instance.logger = logger
-
-        return instance
-    }()
-
-    var rootViewController: UIViewController? { return viewController }
+    private lazy var disposeBag: DisposeBag = { .init() }()
 
     lazy var childCoordinators: [MUKCoordinator] = { .init() }()
 
-    lazy var disposeBag: DisposeBag = { .init() }()
-
-    lazy var findItemsSubject: PublishSubject<Void> = { .init() }()
+    var rootViewController: UIViewController? { return viewController }
 
     // MARK: - Dependencies
 
-    var logger: MFLog?
+    private let logger: MFLog?
 
-    var feedVM: FeedViewModel?
+    private let viewController: FeedViewController
 
     // MARK: - Lifecycle
 
-    init(feedVM: FeedViewModel?, logger: MFLog?) {
-        self.feedVM = feedVM
+    init(viewController: FeedViewController, logger: MFLog?) {
+        self.viewController = viewController
         self.logger = logger
     }
 
@@ -49,84 +40,30 @@ final class FeedCoordinatorProvider: MUKRootViewCoordinator {
     }
 
     func start() {
-        bind(viewModel: feedVM)
-        getFeed()
+        bind()
     }
 
 }
 
 // MARK: - Additional properties
 
-extension FeedCoordinatorProvider {
+private extension FeedCoordinatorProvider {
 
-    func bind(viewModel: FeedViewModel?) {
-        let input = FeedViewModelProvider.Input(execute: findItemsSubject)
-        let output = viewModel?.transform(input: input)
-        output?.result
-            .drive(onNext: { [unowned self] result in
-                self.bind(result: result)
-            })
-            .disposed(by: disposeBag)
-
-        viewController.itemSelected
-            .drive(onNext: { [weak self] itemId in
-                self?.presentDetailView(for: itemId)
-            })
-            .disposed(by: disposeBag)
+    func bind() {
+        viewController.itemDidSelect.drive(onNext: { [weak self] itemId in
+            self?.presentDetailView(for: itemId)
+        }).disposed(by: disposeBag)
     }
 
-    func bind(result: Result<[FeedItemDto], FeedError>) {
-        switch result {
-        case .success(let value): bindAndReload(items: value)
-        case .failure(let error): presentAlertError(error: error)
-        }
-    }
-
-    func bindAndReload(items: [FeedItemDto]) {
-        viewController.items.removeAll()
-        viewController.items.append(contentsOf: items)
-        viewController.itemCollectionView.reloadData()
-    }
-
-    func getFeed() {
-        findItemsSubject.onNext(())
-    }
-
-    func presentAlertError(error: FeedError) {
-        let retryAction = UIAlertAction(
-            title: "Retry",
-            style: .default
-        ) { [unowned self] _ in self.getFeed() }
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
-
-        let alertController = UIAlertController(
-            title: "Attention!",
-            message: "An error ocurred",
-            preferredStyle: .alert
-        )
-        alertController.addAction(cancelAction)
-        alertController.addAction(retryAction)
-
-        viewController.present(alertController, animated: true, completion: nil)
-    }
-
-}
-
-extension FeedCoordinatorProvider {
-
-    private func presentDetailView(for itemId: String) {
-        let findItemCoordinator = FeedCoordinators.findItemCoordinator
+    func presentDetailView(for itemId: String) {
+        let findItemCoordinator = FeedCoordinators.findItemCoordinator(itemId: itemId)
         guard let rootViewController = findItemCoordinator.rootViewController else { return }
-        findItemCoordinator.itemId = itemId
         findItemCoordinator.start()
         addChildCoordinator(findItemCoordinator)
 
-        findItemCoordinator.didDismiss
-            .drive(onNext: { [weak self, unowned findItemCoordinator] in
-                self?.removeChildCoordinator(findItemCoordinator)
-            })
-            .disposed(by: disposeBag)
+        findItemCoordinator.didDismiss.drive(onNext: { [weak self, unowned findItemCoordinator] in
+            self?.removeChildCoordinator(findItemCoordinator)
+        }).disposed(by: disposeBag)
 
         viewController.navigationController?.pushViewController(rootViewController, animated: true)
     }

@@ -11,7 +11,7 @@ import MyFoundation
 public enum AuthenticationCoordinators {
 
     public static var loginCoordinator: LoginCoordinator {
-        return LoginCoordinatorProvider(loginVM: get(), logger: get())
+        return LoginCoordinatorProvider(viewController: get(), logger: get())
     }
 
 }
@@ -20,8 +20,8 @@ private extension AuthenticationCoordinators {
 
     static func get() -> MFLog { return Assembler() }
 
-    static func get() -> LoginViewModel { return Assembler().loginVM }
+    static func get() -> LoginViewController { return Assembler().loginVC }
 
 }
 
-private struct Assembler: MFLog, ViewModels {/* empty */}
+private struct Assembler: MFLog, AuthenticationViews {/* empty */}
