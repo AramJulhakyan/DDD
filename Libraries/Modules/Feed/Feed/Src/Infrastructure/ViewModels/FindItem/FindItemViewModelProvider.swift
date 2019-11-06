@@ -12,6 +12,8 @@ import RxSwift
 
 struct FindItemViewModelProvider {
 
+    var itemId: String
+
     let logger: MFLog?
 
     let findItemService: FindItemService
@@ -21,7 +23,6 @@ struct FindItemViewModelProvider {
 extension FindItemViewModelProvider {
 
     struct Input {
-        let itemId: String
         let execute: Observable<Void>
     }
 
@@ -37,9 +38,9 @@ extension FindItemViewModelProvider: FindItemViewModel {
         let result = input
             .execute
             .flatMapLatest { () -> Observable<Result<FeedItemDto, FeedError>> in
-                guard !input.itemId.isEmpty else { return .just(.failure(.notFound)) }
+                guard !self.itemId.isEmpty else { return .just(.failure(.notFound)) }
 
-                return self.findItemService.execute(itemId: input.itemId)
+                return self.findItemService.execute(itemId: self.itemId)
             }
             .asDriver(onErrorJustReturn: .failure(.notFound))
 

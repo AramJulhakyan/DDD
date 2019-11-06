@@ -8,6 +8,8 @@
 
 protocol FindItemViewModel {
 
+    var itemId: String { get set }
+
     func transform(input: FindItemViewModelProvider.Input) -> FindItemViewModelProvider.Output
 
 }
