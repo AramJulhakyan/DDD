@@ -9,20 +9,26 @@
 import MyFoundation
 import MyUIKit
 
-public enum GuestsCoordinators {
+public enum GuestsCoordinators {/* empty */}
 
-    public static var guestListCoordinator: MUKRootViewCoordinator {
-        return GuestListCoordinatorProvider(findMyGuestsVM: get(), logger: get())
+// MARK: - Public coordinators
+
+public extension GuestsCoordinators {
+
+    static var guestListCoordinator: GuestListCoordinator {
+        GuestListCoordinatorProvider(viewController: get(), logger: get())
     }
 
 }
 
+// MARK: - Dependencies
+
 private extension GuestsCoordinators {
 
-    static func get() -> FindMyGuestsViewModel { return Assembler().findMyGuestsVM }
+    static func get() -> GuestListViewController { Assembler().guestListVC }
 
-    static func get() -> MFLog { return Assembler() }
+    static func get() -> MFLog { Assembler() }
 
 }
 
-private struct Assembler: MFLog, ViewModels {/* empty */}
+private struct Assembler: MFLog, GuestsViews {/* empty */}

@@ -8,6 +8,7 @@
 
 import MyFoundation
 import MyUIKit
+import RxSwift
 import SnapKit
 import UIKit
 
@@ -27,13 +28,19 @@ class GuestListViewController: UIViewController {
         return instance
     }()
 
+    // MARK: - Properties
+
+    private lazy var items: [GuestDto] = { .init() }()
+
+    private lazy var disposeBag: DisposeBag = { .init() }()
+
+    private lazy var findMyGuestsSubject: PublishSubject<Void> = { .init() }()
+
     // MARK: - Dependencies
 
     var logger: MFLog?
 
-    // MARK: - Properties
-
-    lazy var items: [GuestDto] = { .init() }()
+    var findMyGuestsVM: FindMyGuestsViewModel?
 
     // MARK: - Lifecycle
 
@@ -42,6 +49,9 @@ class GuestListViewController: UIViewController {
 
         prepareInterface()
         prepareLayouts()
+
+        bind(viewModel: findMyGuestsVM)
+        findMyGuests()
     }
 
     deinit {
@@ -70,8 +80,56 @@ extension GuestListViewController {
         }
     }
 
+    func bind(viewModel: FindMyGuestsViewModel?) {
+        let input = FindMyGuestsViewModelProvider.Input(execute: findMyGuestsSubject)
+        let output = viewModel?.transform(input: input)
+        output?.result.drive(onNext: { [unowned self] result in
+            self.bind(result: result)
+        }).disposed(by: disposeBag)
+    }
+
+    func bind(result: Result<[GuestDto], GuestsError>) {
+        switch result {
+        case .success(let value): bindAndReload(guests: value)
+        case .failure(let error): presentAlertError(error: error)
+        }
+    }
+
+    func bindAndReload(guests: [GuestDto]) {
+        items.removeAll()
+        items.append(contentsOf: guests)
+        reloadData()
+    }
+
+    func findMyGuests() {
+        findMyGuestsSubject.onNext(())
+    }
+
     func reloadData() {
         guestsTableView.reloadData()
+    }
+
+    func presentAlertError(error: GuestsError) {
+        let retryAction = UIAlertAction(
+            title: "Retry",
+            style: .default
+        ) { [unowned self] _ in self.findMyGuests() }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+
+        let message: String
+        switch error {
+        case .notFound:
+            message = "Guest list not found"
+        default:
+            message = "An error occurred"
+        }
+
+        let alertController = UIAlertController(title: "Attention!", message: message, preferredStyle: .alert)
+        alertController.addAction(cancelAction)
+        alertController.addAction(retryAction)
+
+        present(alertController, animated: true, completion: nil)
     }
 
 }
