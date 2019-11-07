@@ -35,6 +35,7 @@ extension FindItemViewModelProvider {
 extension FindItemViewModelProvider: FindItemViewModel {
 
     func transform(input: Input) -> Output {
+        logger?.info(classType: type(of: self), line: #line, message: "Transforming ViewModel...")
         let result = input
             .execute
             .flatMapLatest { () -> Observable<Result<FeedItemDto, FeedError>> in
