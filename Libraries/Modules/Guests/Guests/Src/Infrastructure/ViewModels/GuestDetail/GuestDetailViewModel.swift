@@ -9,7 +9,5 @@
 import Foundation
 
 protocol GuestDetailViewModel {
-	var guestId: String { get set }
-
 	func transform(input: GuestDetailViewModelProvider.Input) -> GuestDetailViewModelProvider.Output
 }

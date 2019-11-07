@@ -27,7 +27,7 @@ extension ViewModels {
     }
 
 	func guestDetailViewModel(with guestId: String) -> GuestDetailViewModel {
-		GuestDetailViewModelProvider(guestId: guestId, logger: get(), findByIdService: get())
+		GuestDetailViewModelProvider(guestId: guestId, service: get(), logger: get())
 	}
 
 }

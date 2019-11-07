@@ -21,7 +21,7 @@ final class GuestDetailCoordinatorProvider: GuestDetailCoordinator {
 
     var rootViewController: UIViewController? { return viewController }
 
-	var detailDidClosed: Driver<Void> {
+	var detailDidClose: Driver<Void> {
 		return closeSubject.asDriver(onErrorJustReturn: ())
 	}
 

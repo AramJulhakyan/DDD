@@ -10,11 +10,17 @@ import MyFoundation
 import RxCocoa
 import RxSwift
 
-struct GuestDetailViewModelProvider {
+class GuestDetailViewModelProvider {
 
-	var guestId: String
+    private var guestId: String
     let logger: MFLog?
     let findByIdService: FindByIdService
+
+    init(guestId: String, service: FindByIdService, logger: MFLog? = nil) {
+        self.guestId = guestId
+        self.findByIdService = service
+        self.logger = logger
+    }
 
 }
 

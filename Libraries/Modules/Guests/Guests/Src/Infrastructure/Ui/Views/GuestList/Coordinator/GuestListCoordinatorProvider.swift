@@ -63,7 +63,7 @@ extension GuestListCoordinatorProvider {
 		guard let detailViewController = guestDetailCoordinator.rootViewController else { return }
 
 		self.addChildCoordinator(guestDetailCoordinator)
-		guestDetailCoordinator.detailDidClosed
+		guestDetailCoordinator.detailDidClose
 			.drive(onNext: { [weak self, unowned detailViewController, unowned guestDetailCoordinator] in
                 detailViewController.dismiss(animated: true) {
 					self?.removeChildCoordinator(guestDetailCoordinator)

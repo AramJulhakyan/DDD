@@ -11,5 +11,5 @@ import MyUIKit
 import RxCocoa
 
 public protocol GuestDetailCoordinator: MUKRootViewCoordinator {
-	var detailDidClosed: Driver<Void> { get }
+	var detailDidClose: Driver<Void> { get }
 }
