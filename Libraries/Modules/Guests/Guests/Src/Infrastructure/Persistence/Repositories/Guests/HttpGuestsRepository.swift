@@ -16,7 +16,7 @@ struct HttpGuestsRepository {
 
 extension HttpGuestsRepository: GuestsRepository {
 
-    // Mocked response
+	// Mocked response
 
     func findAll() -> Observable<Result<[GuestEntity], DomainError>> {
         return .just(.success([
@@ -32,6 +32,12 @@ extension HttpGuestsRepository: GuestsRepository {
             HttpGuestEntity.mock(category: "Friend")
         ]))
     }
+
+	func findById(guestId: String) -> Observable<Result<GuestEntity, DomainError>> {
+		return .just(.success(
+            HttpGuestEntity.mock(category: "Friend")
+        ))
+	}
 
 }
 

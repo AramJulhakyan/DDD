@@ -16,6 +16,8 @@ private extension ViewModels {
 
     func get() -> FindAllService { return Assembler().findAll }
 
+	func get() -> FindByIdService { return Assembler().findById }
+
 }
 
 extension ViewModels {
@@ -23,6 +25,10 @@ extension ViewModels {
     var findMyGuestsVM: FindMyGuestsViewModel {
         return FindMyGuestsViewModelProvider(logger: get(), findAllService: get())
     }
+
+	func guestDetailViewModel(with guestId: String) -> GuestDetailViewModel {
+		GuestDetailViewModelProvider(guestId: guestId, service: get(), logger: get())
+	}
 
 }
 

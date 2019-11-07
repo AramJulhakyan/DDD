@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		245F65572372F283009D4468 /* GuestDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F65562372F283009D4468 /* GuestDetailCoordinator.swift */; };
+		245F65592372F2A6009D4468 /* GuestDetailCoordinatorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F65582372F2A6009D4468 /* GuestDetailCoordinatorProvider.swift */; };
+		245F655B2372F4B1009D4468 /* GuestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F655A2372F4B1009D4468 /* GuestDetailViewController.swift */; };
+		245F655E23732946009D4468 /* FindByIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F655D23732946009D4468 /* FindByIdService.swift */; };
+		245F65602373299A009D4468 /* FindByIdServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F655F2373299A009D4468 /* FindByIdServiceProvider.swift */; };
+		245F656323732BD3009D4468 /* GuestDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F656223732BD3009D4468 /* GuestDetailViewModel.swift */; };
+		245F656523732BDE009D4468 /* GuestDetailViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F656423732BDE009D4468 /* GuestDetailViewModelProvider.swift */; };
+		245F6567237412D1009D4468 /* GuestDetailDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F6566237412D1009D4468 /* GuestDetailDto.swift */; };
 		E236FD462372B617004032DE /* GuestsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236FD452372B617004032DE /* GuestsViews.swift */; };
 		E236FD482372B965004032DE /* GuestListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236FD472372B965004032DE /* GuestListCoordinator.swift */; };
 		E2509F7E236ACF8600F423B8 /* GuestListCoordinatorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2509F7D236ACF8600F423B8 /* GuestListCoordinatorProvider.swift */; };
@@ -53,6 +61,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		245F65562372F283009D4468 /* GuestDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestDetailCoordinator.swift; sourceTree = "<group>"; };
+		245F65582372F2A6009D4468 /* GuestDetailCoordinatorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestDetailCoordinatorProvider.swift; sourceTree = "<group>"; };
+		245F655A2372F4B1009D4468 /* GuestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestDetailViewController.swift; sourceTree = "<group>"; };
+		245F655D23732946009D4468 /* FindByIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindByIdService.swift; sourceTree = "<group>"; };
+		245F655F2373299A009D4468 /* FindByIdServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindByIdServiceProvider.swift; sourceTree = "<group>"; };
+		245F656223732BD3009D4468 /* GuestDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestDetailViewModel.swift; sourceTree = "<group>"; };
+		245F656423732BDE009D4468 /* GuestDetailViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestDetailViewModelProvider.swift; sourceTree = "<group>"; };
+		245F6566237412D1009D4468 /* GuestDetailDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestDetailDto.swift; sourceTree = "<group>"; };
 		6AD1A747534B6FBEFF92F680 /* Pods_modules_Guests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_modules_Guests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB6ECDE64C153E81FDC0877 /* Pods-modules-Guests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modules-Guests.debug.xcconfig"; path = "Target Support Files/Pods-modules-Guests/Pods-modules-Guests.debug.xcconfig"; sourceTree = "<group>"; };
 		C87E4DF6CAA423E7A6D514CF /* Pods-modules-Guests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modules-Guests.release.xcconfig"; path = "Target Support Files/Pods-modules-Guests/Pods-modules-Guests.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +123,42 @@
 				6AD1A747534B6FBEFF92F680 /* Pods_modules_Guests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		245F65542372F104009D4468 /* GuestDetail */ = {
+			isa = PBXGroup;
+			children = (
+				245F65552372F26A009D4468 /* Coordinator */,
+				245F655A2372F4B1009D4468 /* GuestDetailViewController.swift */,
+			);
+			path = GuestDetail;
+			sourceTree = "<group>";
+		};
+		245F65552372F26A009D4468 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				245F65562372F283009D4468 /* GuestDetailCoordinator.swift */,
+				245F65582372F2A6009D4468 /* GuestDetailCoordinatorProvider.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		245F655C237328E2009D4468 /* FindById */ = {
+			isa = PBXGroup;
+			children = (
+				245F655D23732946009D4468 /* FindByIdService.swift */,
+				245F655F2373299A009D4468 /* FindByIdServiceProvider.swift */,
+			);
+			path = FindById;
+			sourceTree = "<group>";
+		};
+		245F656123732BB9009D4468 /* GuestDetail */ = {
+			isa = PBXGroup;
+			children = (
+				245F656223732BD3009D4468 /* GuestDetailViewModel.swift */,
+				245F656423732BDE009D4468 /* GuestDetailViewModelProvider.swift */,
+			);
+			path = GuestDetail;
 			sourceTree = "<group>";
 		};
 		ADD72E8F3919E549983C020C /* Pods */ = {
@@ -179,6 +231,7 @@
 		E2A861D823643FFC004BE049 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				245F65542372F104009D4468 /* GuestDetail */,
 				E2A861D923644002004BE049 /* GuestList */,
 				E2A8621323647399004BE049 /* GuestsCoordinators.swift */,
 				E236FD452372B617004032DE /* GuestsViews.swift */,
@@ -207,6 +260,7 @@
 		E2A861E623644149004BE049 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				245F656123732BB9009D4468 /* GuestDetail */,
 				E2A8620E23646BE1004BE049 /* FindMyGuests */,
 				E2A861E723644152004BE049 /* ViewModels.swift */,
 			);
@@ -286,10 +340,12 @@
 		E2A861FF2364431C004BE049 /* Guests */ = {
 			isa = PBXGroup;
 			children = (
+				245F655C237328E2009D4468 /* FindById */,
 				E2A862002364431E004BE049 /* FindAll */,
 				E2A862032364433E004BE049 /* GuestDto.swift */,
 				E2A8620523644347004BE049 /* GuestsError.swift */,
 				E2A8620A2364680C004BE049 /* GuestsApplicationServices.swift */,
+				245F6566237412D1009D4468 /* GuestDetailDto.swift */,
 			);
 			path = Guests;
 			sourceTree = "<group>";
@@ -439,27 +495,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				E236FD462372B617004032DE /* GuestsViews.swift in Sources */,
+				245F65592372F2A6009D4468 /* GuestDetailCoordinatorProvider.swift in Sources */,
 				E2A8621423647399004BE049 /* GuestsCoordinators.swift in Sources */,
 				E2A861F4236441F0004BE049 /* Persistence.swift in Sources */,
 				E2A8620B2364680C004BE049 /* GuestsApplicationServices.swift in Sources */,
 				E2A862022364432C004BE049 /* FindAllService.swift in Sources */,
+				245F655E23732946009D4468 /* FindByIdService.swift in Sources */,
 				E2A861FA23644217004BE049 /* HttpGuestEntity.swift in Sources */,
 				E2A861EF2364419B004BE049 /* GuestsRepository.swift in Sources */,
 				E2A861FC236442AD004BE049 /* PersistanceRepositories.swift in Sources */,
 				E2A8620D236468F3004BE049 /* ApplicationServices.swift in Sources */,
 				E2A861F82364420D004BE049 /* HttpGuestsRepository.swift in Sources */,
 				E2509F7E236ACF8600F423B8 /* GuestListCoordinatorProvider.swift in Sources */,
+				245F65602373299A009D4468 /* FindByIdServiceProvider.swift in Sources */,
 				E2A861E823644152004BE049 /* ViewModels.swift in Sources */,
 				E2A8621223646C27004BE049 /* FindMyGuestsViewModelProvider.swift in Sources */,
+				245F656523732BDE009D4468 /* GuestDetailViewModelProvider.swift in Sources */,
+				245F656323732BD3009D4468 /* GuestDetailViewModel.swift in Sources */,
 				E2833C912363255700533B38 /* Guests.swift in Sources */,
 				E2A8621023646BF1004BE049 /* FindMyGuestsViewModel.swift in Sources */,
 				E2A862042364433E004BE049 /* GuestDto.swift in Sources */,
+				245F655B2372F4B1009D4468 /* GuestDetailViewController.swift in Sources */,
 				E2A861ED23644177004BE049 /* GuestEntity.swift in Sources */,
 				E2A861F1236441C9004BE049 /* DomainError.swift in Sources */,
 				E2A8620923644396004BE049 /* FindAllServiceProvider.swift in Sources */,
 				E236FD482372B965004032DE /* GuestListCoordinator.swift in Sources */,
 				E2A861DE23644035004BE049 /* GuestListViewController.swift in Sources */,
+				245F65572372F283009D4468 /* GuestDetailCoordinator.swift in Sources */,
 				E2A8620623644347004BE049 /* GuestsError.swift in Sources */,
+				245F6567237412D1009D4468 /* GuestDetailDto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,5 +44,4 @@ extension FindAllServiceProvider: FindAllService {
                 }
         }
     }
-
 }

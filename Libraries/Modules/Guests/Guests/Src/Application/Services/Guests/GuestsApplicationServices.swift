@@ -22,6 +22,8 @@ extension GuestsApplicationServices {
 
     var findAll: FindAllService { return FindAllServiceProvider(logger: get(), repository: get()) }
 
+	var findById: FindByIdService { return FindByIdServiceProvider (logger: get(), repository: get()) }
+
 }
 
 private struct Assembler: MFLog, PersistanceRepositories {/* empty */}
