@@ -20,6 +20,12 @@ extension GuestsViews {
         return instance
     }
 
+	func guestDetailVC(guestId: String) -> GuestDetailViewController {
+        let instance = GuestDetailViewController()
+        instance.guestDetailViewModel = get(with: guestId)
+        return instance
+    }
+
 }
 
 // MARK: - Dependencies
@@ -29,6 +35,8 @@ private extension GuestsViews {
     func get() -> MFLog { Assembler() }
 
     func get() -> FindMyGuestsViewModel { Assembler().findMyGuestsVM }
+
+	func get(with guestId: String) -> GuestDetailViewModel { Assembler().guestDetailViewModel(with: guestId) }
 
 }
 

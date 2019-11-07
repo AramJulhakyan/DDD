@@ -19,6 +19,10 @@ public extension GuestsCoordinators {
         GuestListCoordinatorProvider(viewController: get(), logger: get())
     }
 
+	static func guestDetailCoordinator(guestId: String) -> GuestDetailCoordinator {
+		GuestDetailCoordinatorProvider(viewController: get(guestId: guestId), logger: get())
+    }
+
 }
 
 // MARK: - Dependencies
@@ -26,6 +30,8 @@ public extension GuestsCoordinators {
 private extension GuestsCoordinators {
 
     static func get() -> GuestListViewController { Assembler().guestListVC }
+
+	static func get(guestId: String) -> GuestDetailViewController { Assembler().guestDetailVC(guestId: guestId) }
 
     static func get() -> MFLog { Assembler() }
 

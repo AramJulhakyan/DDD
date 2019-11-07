@@ -12,4 +12,5 @@ protocol GuestsRepository {
 
     func findAll() -> Observable<Result<[GuestEntity], DomainError>>
 
+	func findById(guestId: String) -> Observable<Result<GuestEntity, DomainError>>
 }

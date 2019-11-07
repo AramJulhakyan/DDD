@@ -9,6 +9,8 @@
 import MyFoundation
 import MyUIKit
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class GuestListCoordinatorProvider: GuestListCoordinator {
 
@@ -17,6 +19,8 @@ final class GuestListCoordinatorProvider: GuestListCoordinator {
     lazy var childCoordinators: [MUKCoordinator] = { .init() }()
 
     var rootViewController: UIViewController? { return viewController }
+
+	private let disposeBag = DisposeBag()
 
     // MARK: - Dependencies
 
@@ -38,7 +42,6 @@ final class GuestListCoordinatorProvider: GuestListCoordinator {
     func start() {
         bind()
     }
-
 }
 
 // MARK: - Additional properties
@@ -47,6 +50,27 @@ extension GuestListCoordinatorProvider {
 
     func bind() {
         // ViewController outputs configurations here
+		viewController?.didSelectGuest
+			.drive(onNext: { [weak self] idGuest in
+				guard let guestId = idGuest else { return }
+				self?.showGuestDetail(guestId)
+			})
+			.disposed(by: disposeBag)
     }
 
+	private func showGuestDetail(_ guestId: String) {
+		let guestDetailCoordinator = GuestsCoordinators.guestDetailCoordinator(guestId: guestId)
+		guard let detailViewController = guestDetailCoordinator.rootViewController else { return }
+
+		self.addChildCoordinator(guestDetailCoordinator)
+		guestDetailCoordinator.detailDidClosed
+			.drive(onNext: { [weak self, unowned detailViewController, unowned guestDetailCoordinator] in
+                detailViewController.dismiss(animated: true) {
+					self?.removeChildCoordinator(guestDetailCoordinator)
+				}
+			})
+			.disposed(by: disposeBag)
+		rootViewController?.present(detailViewController, animated: true)
+        guestDetailCoordinator.start()
+	}
 }
