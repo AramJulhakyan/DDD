@@ -52,6 +52,10 @@
 		E2A862AD2364A835004BE049 /* FeedItemDtoMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A862AC2364A835004BE049 /* FeedItemDtoMock.swift */; };
 		E2A862B12364A8EA004BE049 /* FeedCoordinatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A862B02364A8EA004BE049 /* FeedCoordinatorsTests.swift */; };
 		E2A862B72364AA74004BE049 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A862B62364AA74004BE049 /* FeedViewControllerTests.swift */; };
+		E2BBA4E6237413CD00A0B679 /* FindItemServiceProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBA4E5237413CD00A0B679 /* FindItemServiceProviderTests.swift */; };
+		E2BBA4E92374186500A0B679 /* FindItemViewModelProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBA4E82374186500A0B679 /* FindItemViewModelProviderTests.swift */; };
+		E2BBA4EC23741A5F00A0B679 /* FindItemServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBA4EB23741A5F00A0B679 /* FindItemServiceMock.swift */; };
+		E2BBA4F0237423D400A0B679 /* FeedItemCoordinatorProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBA4EF237423D400A0B679 /* FeedItemCoordinatorProviderTests.swift */; };
 		E2F022EB236346D8002C0A54 /* FindAllItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F022EA236346D8002C0A54 /* FindAllItemsService.swift */; };
 		E2F022ED236346FC002C0A54 /* FindAllItemsServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F022EC236346FC002C0A54 /* FindAllItemsServiceProvider.swift */; };
 		E2F022EF23634865002C0A54 /* FeedApplicationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F022EE23634865002C0A54 /* FeedApplicationServices.swift */; };
@@ -137,6 +141,10 @@
 		E2A862AC2364A835004BE049 /* FeedItemDtoMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemDtoMock.swift; sourceTree = "<group>"; };
 		E2A862B02364A8EA004BE049 /* FeedCoordinatorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinatorsTests.swift; sourceTree = "<group>"; };
 		E2A862B62364AA74004BE049 /* FeedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerTests.swift; sourceTree = "<group>"; };
+		E2BBA4E5237413CD00A0B679 /* FindItemServiceProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindItemServiceProviderTests.swift; sourceTree = "<group>"; };
+		E2BBA4E82374186500A0B679 /* FindItemViewModelProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindItemViewModelProviderTests.swift; sourceTree = "<group>"; };
+		E2BBA4EB23741A5F00A0B679 /* FindItemServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindItemServiceMock.swift; sourceTree = "<group>"; };
+		E2BBA4EF237423D400A0B679 /* FeedItemCoordinatorProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemCoordinatorProviderTests.swift; sourceTree = "<group>"; };
 		E2F022EA236346D8002C0A54 /* FindAllItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAllItemsService.swift; sourceTree = "<group>"; };
 		E2F022EC236346FC002C0A54 /* FindAllItemsServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAllItemsServiceProvider.swift; sourceTree = "<group>"; };
 		E2F022EE23634865002C0A54 /* FeedApplicationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedApplicationServices.swift; sourceTree = "<group>"; };
@@ -447,9 +455,9 @@
 		E2A8628123649C24004BE049 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				E236FD4D2372D088004032DE /* Infrastructure */,
 				E2A8628A23649F1B004BE049 /* Domain */,
 				E2A862A62364A659004BE049 /* Application */,
+				E236FD4D2372D088004032DE /* Infrastructure */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -474,6 +482,7 @@
 		E2A8628423649C36004BE049 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				E2BBA4E4237413B300A0B679 /* FindItem */,
 				E2A8628523649C3E004BE049 /* FindAllItems */,
 				E2A8628623649C63004BE049 /* FeedApplicationServicesTests.swift */,
 			);
@@ -552,6 +561,7 @@
 		E2A862A02364A5DE004BE049 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E2BBA4E72374185200A0B679 /* FindItem */,
 				E2A862A32364A631004BE049 /* Feed */,
 				E2A862A12364A5EB004BE049 /* ViewModelsTests.swift */,
 			);
@@ -585,6 +595,7 @@
 		E2A862A82364A65E004BE049 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				E2BBA4EA2374193D00A0B679 /* FindItem */,
 				E2A862A92364A679004BE049 /* FindAllItems */,
 				E2A862AC2364A835004BE049 /* FeedItemDtoMock.swift */,
 			);
@@ -610,6 +621,7 @@
 		E2A862AF2364A8DD004BE049 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E2BBA4ED237423B000A0B679 /* FeedItem */,
 				E2A862B22364A96F004BE049 /* Feed */,
 				E2A862B02364A8EA004BE049 /* FeedCoordinatorsTests.swift */,
 			);
@@ -619,18 +631,58 @@
 		E2A862B22364A96F004BE049 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				E2A862B52364AA67004BE049 /* ViewController */,
-				E2A858D6236B401C005E25D9 /* FeedCoordinatorProviderTests.swift */,
+				E2A862B52364AA67004BE049 /* Coordinator */,
+				E2A862B62364AA74004BE049 /* FeedViewControllerTests.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
 		};
-		E2A862B52364AA67004BE049 /* ViewController */ = {
+		E2A862B52364AA67004BE049 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				E2A862B62364AA74004BE049 /* FeedViewControllerTests.swift */,
+				E2A858D6236B401C005E25D9 /* FeedCoordinatorProviderTests.swift */,
 			);
-			path = ViewController;
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E2BBA4E4237413B300A0B679 /* FindItem */ = {
+			isa = PBXGroup;
+			children = (
+				E2BBA4E5237413CD00A0B679 /* FindItemServiceProviderTests.swift */,
+			);
+			path = FindItem;
+			sourceTree = "<group>";
+		};
+		E2BBA4E72374185200A0B679 /* FindItem */ = {
+			isa = PBXGroup;
+			children = (
+				E2BBA4E82374186500A0B679 /* FindItemViewModelProviderTests.swift */,
+			);
+			path = FindItem;
+			sourceTree = "<group>";
+		};
+		E2BBA4EA2374193D00A0B679 /* FindItem */ = {
+			isa = PBXGroup;
+			children = (
+				E2BBA4EB23741A5F00A0B679 /* FindItemServiceMock.swift */,
+			);
+			path = FindItem;
+			sourceTree = "<group>";
+		};
+		E2BBA4ED237423B000A0B679 /* FeedItem */ = {
+			isa = PBXGroup;
+			children = (
+				E2BBA4EE237423B400A0B679 /* Coordinator */,
+			);
+			path = FeedItem;
+			sourceTree = "<group>";
+		};
+		E2BBA4EE237423B400A0B679 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E2BBA4EF237423D400A0B679 /* FeedItemCoordinatorProviderTests.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		E2F022F2236348F8002C0A54 /* ViewModels */ = {
@@ -886,10 +938,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A862AD2364A835004BE049 /* FeedItemDtoMock.swift in Sources */,
+				E2BBA4E92374186500A0B679 /* FindItemViewModelProviderTests.swift in Sources */,
 				E2A858D7236B401C005E25D9 /* FeedCoordinatorProviderTests.swift in Sources */,
 				E2A8629B2364A4AB004BE049 /* PersistanceRepositoriesTests.swift in Sources */,
 				E2A8628923649EF7004BE049 /* FindAllItemsServiceProviderTests.swift in Sources */,
 				E2A862982364A44E004BE049 /* PersistanceTests.swift in Sources */,
+				E2BBA4EC23741A5F00A0B679 /* FindItemServiceMock.swift in Sources */,
 				E2A862912364A02E004BE049 /* FeedItemEntityMock.swift in Sources */,
 				E2A862B12364A8EA004BE049 /* FeedCoordinatorsTests.swift in Sources */,
 				E2A862B72364AA74004BE049 /* FeedViewControllerTests.swift in Sources */,
@@ -899,7 +953,9 @@
 				E2A862AB2364A687004BE049 /* FindAllItemsServiceMock.swift in Sources */,
 				E236FD502372D098004032DE /* FeedViewModelMock.swift in Sources */,
 				E2A862942364A37D004BE049 /* ApplicationServicesTests.swift in Sources */,
+				E2BBA4E6237413CD00A0B679 /* FindItemServiceProviderTests.swift in Sources */,
 				E2A862A52364A641004BE049 /* FeedViewModelProviderTests.swift in Sources */,
+				E2BBA4F0237423D400A0B679 /* FeedItemCoordinatorProviderTests.swift in Sources */,
 				E2A8629F2364A539004BE049 /* HttpFeedRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
